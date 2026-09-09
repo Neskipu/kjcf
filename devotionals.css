@@ -1,0 +1,1967 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --primary: #8c7d71;
+    --primary-light: #ead8c5;
+    --primary-dark: #2b211b;
+    --secondary: #b39a7b;
+    --light: #fcfaf7;
+    --cream: #f7f1e9;
+    --dark: #302821;
+    --gray: #756d67;
+    --white: #ffffff;
+
+    --shadow:
+        0 8px 25px rgba(80, 65, 50, 0.06);
+
+    --shadow-soft:
+        0 12px 35px rgba(80, 65, 50, 0.055);
+
+    --shadow-card:
+        0 18px 45px rgba(80, 65, 50, 0.075);
+
+    --transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 8% 8%,
+            rgba(236, 221, 204, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 30%,
+            rgba(226, 215, 201, 0.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 45% 90%,
+            rgba(238, 226, 211, 0.24),
+            transparent 34%
+        ),
+        #fcfaf7;
+
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 90px 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 2px 18px rgba(60, 45, 30, 0.035);
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    /* Small gap between logo image and KJCF BANGALORE */
+    gap: 6px;
+
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.logo span {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+.nav-links li {
+    margin-left: 30px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 10px;
+}
+
+.devotionals-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    width: 140px;
+    padding: 6px 0;
+
+    transform: translate(-50%, -6px);
+
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(140, 125, 113, 0.10);
+    border-radius: 0 0 10px 10px;
+
+    box-shadow:
+        0 10px 25px rgba(60, 45, 30, 0.07);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 1001;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.nav-dropdown:hover .devotionals-dropdown,
+.nav-dropdown:focus-within .devotionals-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+.devotionals-dropdown a {
+    display: block;
+    padding: 9px 10px;
+    text-align: center;
+
+    color: var(--dark);
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.devotionals-dropdown a:hover,
+.devotionals-dropdown a:focus {
+    background: rgba(140, 125, 113, 0.06);
+    color: var(--primary);
+    outline: none;
+}
+
+
+/* =========================================================
+   LANGUAGE TOGGLE
+========================================================= */
+
+.language-toggle {
+    position: relative;
+
+    width: 68px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3px;
+    border-radius: 30px;
+
+    background: #eee8e1;
+
+    cursor: pointer;
+    user-select: none;
+
+    flex-shrink: 0;
+    margin-left: 30px;
+
+    outline: none;
+}
+
+.language-option {
+    position: relative;
+    z-index: 2;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    color: var(--primary);
+
+    transition: color 0.3s ease;
+}
+
+.language-slider {
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: 31px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: transform 0.35s ease;
+
+    z-index: 3;
+}
+
+.language-toggle.kh-active .language-slider {
+    transform: translateX(31px);
+}
+
+.language-toggle:not(.kh-active) .language-option:first-child,
+.language-toggle.kh-active .language-option:nth-child(2) {
+    color: var(--white);
+}
+
+.language-toggle:not(.kh-active) .language-option:nth-child(2),
+.language-toggle.kh-active .language-option:first-child {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.hamburger {
+    display: none;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    color: var(--primary);
+
+    cursor: pointer;
+    user-select: none;
+
+    background: transparent;
+    border: none;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.devotion-hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.596) 0%,
+            rgba(3, 3, 3, 0.719) 100%
+        ),
+        url("./assets/1_j3Pdbj7Q0Ceifj6nb1ZHLg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 170px;
+    padding-bottom: 110px;
+
+    text-align: center;
+    position: relative;
+}
+
+.devotion-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+
+    animation:
+        heroFadeUp 1s ease-out both;
+}
+
+.devotion-hero-icon {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(235, 209, 183, 0.9);
+
+    color: var(--primary-dark);
+
+    font-size: 2rem;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.devotion-hero-icon:hover {
+    transform:
+        scale(1.08)
+        rotate(-5deg);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.devotion-hero h1 {
+    color: var(--white);
+
+    font-size:
+        clamp(3rem, 6vw, 4.5rem);
+
+    margin-bottom: 18px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.devotion-hero p {
+    max-width: 680px;
+    margin: 0 auto;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DEVOTIONAL LIBRARY
+========================================================= */
+
+.devotion-library {
+    padding: 125px 0 110px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fef8e0 0%,
+            #efe5df 100%
+        );
+
+    position: relative;
+    scroll-margin-top: 100px;
+}
+
+.library-heading {
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto 65px;
+}
+
+.library-label {
+    display: inline-block;
+
+    color: var(--primary-dark);
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+
+    white-space: nowrap;
+    position: relative;
+}
+
+.library-label::after {
+    content: '';
+
+    display: inline-block;
+
+    width: 2px;
+    height: 1.05em;
+
+    margin-left: 8px;
+
+    background:
+        var(--primary-dark);
+
+    vertical-align: -0.15em;
+
+    animation:
+        libraryCursor 0.7s step-end infinite;
+}
+
+@keyframes libraryCursor {
+    0%, 49% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+========================================================= */
+
+.library-info-box {
+    max-width: 900px;
+    margin: 0 auto;
+
+    padding: 38px 45px;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.15);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(60, 40, 25, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.library-info-box:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 45px rgba(60, 40, 25, 0.11);
+}
+
+.library-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.library-description p {
+    color: #514943;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.library-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CONTACT NOTE
+========================================================= */
+
+.contact-note {
+    width: fit-content;
+    max-width: 100%;
+
+    margin: 30px auto 0;
+    padding: 12px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+        rgba(235, 209, 183, 0.42);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.18);
+
+    border-radius: 50px;
+
+    color: var(--gray);
+    font-size: 0.9rem;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-note:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(60, 40, 25, 0.08);
+}
+
+.contact-note i {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.contact-note span {
+    color: var(--gray);
+    font-size: 0.88rem;
+}
+
+.contact-note a {
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+}
+
+.contact-note a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.devotion-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0 auto 50px;
+    padding: 6px;
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.15);
+
+    border-radius: 50px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.tab-button {
+    border: none;
+    background: transparent;
+
+    color: var(--primary-dark);
+
+    padding: 11px 30px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tab-button i {
+    margin-right: 7px;
+}
+
+.tab-button:hover {
+    background:
+        var(--primary-light);
+
+    transform:
+        translateY(-2px);
+}
+
+.tab-button.active {
+    background:
+        var(--primary);
+
+    color:
+        var(--white);
+
+    box-shadow:
+        0 6px 15px rgba(80, 55, 35, 0.15);
+}
+
+
+/* =========================================================
+   TAB CONTENT
+========================================================= */
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+
+    animation:
+        contentFade 0.55s ease both;
+}
+
+
+/* =========================================================
+   ABOUT DEVOTIONS
+========================================================= */
+
+.about-devotions {
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.15);
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 15px 40px rgba(60, 40, 25, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.about-devotions:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 45px rgba(60, 40, 25, 0.12);
+}
+
+.about-devotions h3 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 22px;
+}
+
+.about-devotions > p {
+    color: #514943;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   MONTH CARD
+========================================================= */
+
+.month-card {
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.15);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 15px 40px rgba(60, 40, 25, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.month-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 45px rgba(60, 40, 25, 0.12);
+}
+
+
+/* =========================================================
+   MONTH HEADER
+========================================================= */
+
+.month-header {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.month-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary-dark);
+
+    border-radius: 15px;
+
+    font-size: 1.3rem;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.month-card:hover .month-icon {
+    transform:
+        rotate(-5deg)
+        scale(1.05);
+}
+
+.month-header h3 {
+    color: var(--primary-dark);
+    font-size: 1.7rem;
+    line-height: 1.3;
+}
+
+.month-header p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   DEVOTIONAL LIST
+========================================================= */
+
+.devotion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.devotion-item {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.7);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.1);
+
+    border-radius: 13px;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.devotion-item:hover {
+    transform:
+        translateX(5px);
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 6px 18px rgba(60, 40, 25, 0.08);
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.devotion-date {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        var(--primary);
+
+    color:
+        var(--white);
+
+    border-radius: 13px;
+
+    line-height: 1;
+}
+
+.devotion-date strong {
+    font-size: 1.15rem;
+}
+
+.devotion-date small {
+    font-size: 0.62rem;
+    margin-top: 4px;
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   DEVOTION INFO
+========================================================= */
+
+.devotion-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.devotion-info h4 {
+    color: var(--primary-dark);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+.devotion-info p {
+    color: var(--gray);
+    font-size: 0.75rem;
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.devotion-arrow {
+    color: var(--primary);
+    font-size: 0.9rem;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.devotion-item:hover .devotion-arrow {
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.coming-soon {
+    cursor: default;
+}
+
+.coming-soon:hover {
+    transform: none;
+
+    background:
+        rgba(255, 255, 255, 0.7);
+
+    box-shadow: none;
+}
+
+.coming-soon .devotion-date {
+    background: #b9aea6;
+}
+
+.coming-badge {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(140, 125, 113, 0.12);
+
+    color: var(--gray);
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ENGLISH MESSAGE
+========================================================= */
+
+.english-message {
+    display: none;
+
+    text-align: center;
+
+    max-width: 700px;
+    margin: 0 auto;
+
+    padding: 60px 30px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.15);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(60, 40, 25, 0.08);
+}
+
+.english-message i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.english-message h3 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.english-message p {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+body.english .khasi-content {
+    display: none;
+}
+
+body.english .english-message {
+    display: block;
+
+    animation:
+        contentFade 0.5s ease both;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background-color:
+        var(--primary-dark);
+
+    color:
+        var(--white);
+
+    padding:
+        50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+
+    transition:
+        var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background-color:
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    transition:
+        var(--transition);
+}
+
+.social-links a:hover {
+    background-color:
+        var(--primary);
+
+    transform:
+        translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes contentFade {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       NAVBAR
+       LOGO | LANGUAGE | HAMBURGER
+    ===================================================== */
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       LOGO
+    ===================================================== */
+
+    .logo {
+        font-size: 1.25rem;
+        min-width: 0;
+        max-width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        /* Keep the same small gap on mobile */
+        gap: 6px;
+
+        white-space: nowrap;
+        overflow: hidden;
+
+        flex-shrink: 1;
+    }
+
+    .logo span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    header .logo img {
+        height: 48px;
+        width: 48px;
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       LANGUAGE TOGGLE
+    ===================================================== */
+
+    .language-toggle {
+        margin-left: auto;
+        margin-right: 20px;
+
+        width: 64px;
+        height: 30px;
+
+        flex-shrink: 0;
+    }
+
+    .language-option {
+        width: 50%;
+        height: 100%;
+    }
+
+    .language-slider {
+        width: 28px;
+        height: 24px;
+    }
+
+    .language-toggle.kh-active .language-slider {
+        transform:
+            translateX(28px);
+    }
+
+
+    /* =====================================================
+       HAMBURGER
+    ===================================================== */
+
+    .hamburger {
+        display: flex;
+
+        width: 32px;
+        height: 32px;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV MENU
+    ===================================================== */
+
+    .nav-links {
+        position: fixed;
+
+        top: 70px;
+        left: -100%;
+
+        width: 100%;
+
+        background:
+            rgba(255, 255, 255, 0.95);
+
+        backdrop-filter:
+            blur(14px);
+
+        -webkit-backdrop-filter:
+            blur(14px);
+
+        flex-direction: column;
+        align-items: center;
+
+        padding: 20px 0;
+
+        box-shadow:
+            0 10px 20px rgba(60, 45, 30, 0.07);
+
+        transition:
+            var(--transition);
+
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+
+    /* =====================================================
+       MOBILE DEVOTIONAL DROPDOWN
+    ===================================================== */
+
+    .nav-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .devotionals-dropdown {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 8px;
+        padding: 0;
+
+        transform: none;
+
+        background:
+            rgba(255, 255, 255, 0.58);
+
+        backdrop-filter:
+            blur(8px);
+
+        -webkit-backdrop-filter:
+            blur(8px);
+
+        border-radius: 8px;
+
+        box-shadow: none;
+
+        border:
+            1px solid rgba(140, 125, 113, 0.07);
+
+        max-height: 0;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.3s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+
+    /* Disable desktop hover dropdown on mobile */
+
+    .nav-dropdown:hover .devotionals-dropdown,
+    .nav-dropdown:focus-within .devotionals-dropdown {
+        transform: none;
+
+        max-height: 0;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+
+    /* Open when Devotionals is clicked */
+
+    .nav-dropdown.dropdown-open .devotionals-dropdown {
+        max-height: 150px;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    /* Keep dropdown open while clicked/focused */
+
+    .nav-dropdown.dropdown-open:hover .devotionals-dropdown,
+    .nav-dropdown.dropdown-open:focus-within .devotionals-dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .devotionals-dropdown a {
+        padding: 8px 12px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .devotion-hero {
+        min-height: 72vh;
+
+        padding-top: 150px;
+        padding-bottom: 85px;
+    }
+
+    .devotion-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .devotion-hero p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+
+    /* =====================================================
+       LIBRARY
+    ===================================================== */
+
+    .devotion-library {
+        padding: 90px 0 80px;
+    }
+
+    .library-heading {
+        margin-bottom: 48px;
+    }
+
+    .library-label {
+        font-size: 1.25rem;
+        letter-spacing: 3px;
+        margin-bottom: 25px;
+    }
+
+    .library-info-box {
+        padding: 32px 30px;
+    }
+
+    .library-description p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-note {
+        max-width: 100%;
+        padding: 11px 18px;
+        margin-top: 28px;
+    }
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
+
+    .devotion-tabs {
+        width: 100%;
+
+        border-radius: 18px;
+
+        gap: 5px;
+        padding: 5px;
+
+        margin-bottom: 40px;
+    }
+
+    .tab-button {
+        flex: 1;
+        min-width: 0;
+
+        padding: 11px 12px;
+
+        font-size: 0.82rem;
+    }
+
+    .tab-button i {
+        margin-right: 5px;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .month-card,
+    .about-devotions {
+        padding: 25px 20px;
+    }
+
+    .month-header {
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .month-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+
+        border-radius: 13px;
+    }
+
+    .month-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .devotion-item {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .devotion-date {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+    }
+
+    .devotion-date strong {
+        font-size: 1.05rem;
+    }
+
+    .devotion-info h4 {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    .devotion-info p {
+        display: none;
+    }
+
+    .devotion-arrow {
+        font-size: 0.75rem;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-devotions h3 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .about-devotions p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .container {
+        padding: 0 15px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .devotion-hero {
+        min-height: 72vh;
+
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+
+    .devotion-hero h1 {
+        font-size: 2.15rem;
+        margin-bottom: 12px;
+    }
+
+    .devotion-hero p {
+        font-size: 0.92rem;
+        padding: 0 10px;
+        line-height: 1.7;
+    }
+
+    .devotion-hero-icon {
+        width: 62px;
+        height: 62px;
+
+        font-size: 1.45rem;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* =====================================================
+       LIBRARY
+    ===================================================== */
+
+    .devotion-library {
+        padding: 75px 0 60px;
+    }
+
+    .library-heading {
+        margin-bottom: 38px;
+    }
+
+    .library-label {
+        font-size: 1.05rem;
+        letter-spacing: 2px;
+        margin-bottom: 23px;
+        max-width: 100%;
+    }
+
+    .library-info-box {
+        padding: 25px 18px;
+        border-radius: 17px;
+    }
+
+    .library-description p {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        margin-bottom: 18px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-note {
+        width: 100%;
+
+        margin-top: 25px;
+
+        padding: 11px 12px;
+
+        border-radius: 15px;
+
+        flex-wrap: wrap;
+
+        gap: 5px 7px;
+
+        text-align: center;
+    }
+
+    .contact-note span {
+        font-size: 0.78rem;
+    }
+
+    .contact-note a {
+        font-size: 0.76rem;
+        max-width: 100%;
+        word-break: break-word;
+    }
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
+
+    .devotion-tabs {
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 15px;
+    }
+
+    .tab-button {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+    }
+
+    .tab-button i {
+        margin-right: 3px;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .month-card,
+    .about-devotions {
+        padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .month-header {
+        gap: 10px;
+    }
+
+    .month-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+
+        font-size: 1.1rem;
+    }
+
+    .month-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .month-header p {
+        font-size: 0.76rem;
+    }
+
+    .devotion-item {
+        gap: 9px;
+        padding: 11px 9px;
+        border-radius: 12px;
+    }
+
+    .devotion-date {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+
+        border-radius: 10px;
+    }
+
+    .devotion-date strong {
+        font-size: 0.9rem;
+    }
+
+    .devotion-date small {
+        font-size: 0.55rem;
+    }
+
+    .devotion-info h4 {
+        font-size: 0.76rem;
+        line-height: 1.4;
+    }
+
+    .devotion-arrow {
+        display: none;
+    }
+
+    .coming-badge {
+        font-size: 0.58rem;
+        padding: 4px 7px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-devotions h3 {
+        font-size: 1.35rem;
+    }
+
+
+    /* =====================================================
+       ENGLISH
+    ===================================================== */
+
+    .english-message {
+        padding: 45px 20px;
+    }
+
+    .english-message h3 {
+        font-size: 1.5rem;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}

@@ -1,0 +1,2089 @@
+@font-face {
+    font-family: 'RusticRoadway';
+    src: url('./fonts/RusticRoadway.otf') format('opentype');
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --primary: #8c7d71;
+    --primary-light: #ead8c5;
+    --primary-dark: #2b211b;
+    --secondary: #b39a7b;
+    --light: #fcfaf7;
+    --cream: #f7f1e9;
+    --dark: #302821;
+    --gray: #756d67;
+    --white: #ffffff;
+
+    --shadow:
+        0 8px 25px rgba(80, 65, 50, 0.06);
+
+    --shadow-soft:
+        0 12px 35px rgba(80, 65, 50, 0.055);
+
+    --shadow-card:
+        0 18px 45px rgba(80, 65, 50, 0.075);
+
+    --transition:
+        all 0.3s ease;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 8% 8%,
+            rgba(236, 221, 204, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 30%,
+            rgba(226, 215, 201, 0.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 45% 90%,
+            rgba(238, 226, 211, 0.24),
+            transparent 34%
+        ),
+        #fcfaf7;
+
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 90px 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 2px 18px rgba(60, 45, 30, 0.035);
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 0;
+
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    flex-wrap: nowrap;
+}
+
+.nav-links li {
+    margin-left: 30px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+
+    height: 10px;
+}
+
+.devotionals-dropdown {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 50%;
+
+    width: 140px;
+    padding: 6px 0;
+
+    transform: translate(-50%, -6px);
+
+    background: rgba(255, 255, 255, 0.84);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(140, 125, 113, 0.10);
+    border-radius: 0 0 10px 10px;
+
+    box-shadow:
+        0 10px 25px rgba(60, 45, 30, 0.07);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 1001;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.nav-dropdown:hover .devotionals-dropdown,
+.nav-dropdown:focus-within .devotionals-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate(-50%, 0);
+}
+
+.devotionals-dropdown a {
+    display: block;
+
+    padding: 9px 10px;
+
+    text-align: center;
+
+    color: var(--dark);
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.devotionals-dropdown a:hover,
+.devotionals-dropdown a:focus {
+    background: rgba(140, 125, 113, 0.06);
+    color: var(--primary);
+    outline: none;
+}
+
+/* =========================================================
+   LANGUAGE TOGGLE
+========================================================= */
+
+.language-toggle {
+    position: relative;
+
+    width: 68px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3px;
+
+    border-radius: 30px;
+
+    background: #eee8e1;
+
+    cursor: pointer;
+    user-select: none;
+
+    flex-shrink: 0;
+
+    margin-left: 30px;
+
+    outline: none;
+}
+
+.language-option {
+    position: relative;
+
+    z-index: 2;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: var(--primary);
+
+    transition: color 0.3s ease;
+}
+
+.language-slider {
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: 31px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: transform 0.35s ease;
+
+    z-index: 3;
+}
+
+.language-toggle.kh-active .language-slider {
+    transform: translateX(31px);
+}
+
+.language-toggle:not(.kh-active) .language-option:first-child,
+.language-toggle.kh-active .language-option:nth-child(2) {
+    color: var(--white);
+}
+
+.language-toggle:not(.kh-active) .language-option:nth-child(2),
+.language-toggle.kh-active .language-option:first-child {
+    color: var(--primary);
+}
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.hamburger {
+    display: none;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+
+    color: var(--primary);
+
+    cursor: pointer;
+    user-select: none;
+
+    background: transparent;
+    border: none;
+
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 17, 14, 0.58),
+            rgba(20, 17, 14, 0.70)
+        ),
+        url("./assets/wallpaperflare.com_wallpaper.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+
+    text-align: center;
+
+    perspective: 1000px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+
+    margin: 30px 0;
+
+    font-family: 'RusticRoadway', cursive;
+    font-weight: normal;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.82);
+
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.hero h1,
+.hero h2 {
+    animation: fadeText 1.5s ease-out forwards;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.section-title {
+    color: var(--primary-dark);
+    letter-spacing: -0.3px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(235, 219, 202, 0.38),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 85% 85%,
+            rgba(228, 216, 201, 0.30),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #fcfaf7 0%,
+            #faf6f0 50%,
+            #f8f1e9 100%
+        );
+
+    padding: 100px 0;
+
+    overflow: hidden;
+}
+
+.about .section-title {
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+}
+
+.section-divider {
+    color: var(--primary);
+
+    font-size: 2rem;
+
+    text-align: center;
+    line-height: 1;
+
+    margin: 12px 0 20px;
+
+    opacity: 0.7;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.about-text p {
+    color: #5c554f;
+
+    font-size: 1.05rem;
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.about-features {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    max-width: 650px;
+
+    margin: 45px auto 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    border: 1px solid rgba(140, 125, 113, 0.09);
+
+    border-radius: 14px;
+
+    padding: 22px 25px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.feature.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature i {
+    color: var(--primary);
+
+    font-size: 1.5rem;
+
+    width: 30px;
+    min-width: 30px;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.feature h4 {
+    color: var(--primary-dark);
+
+    margin: 0;
+
+    font-size: 1rem;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 10px 25px rgba(80, 65, 50, 0.08);
+
+    transform: translateY(-4px);
+}
+
+.feature:hover i {
+    transform: scale(1.12);
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 15%,
+            rgba(238, 226, 211, 0.30),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 15% 90%,
+            rgba(232, 219, 203, 0.24),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #f8f1e9 0%,
+            #faf7f2 50%,
+            #fcfaf7 100%
+        );
+
+    padding: 100px 0;
+}
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.68);
+
+    border: 1px solid rgba(140, 125, 113, 0.09);
+
+    border-radius: 16px;
+
+    padding: 35px 30px;
+
+    box-shadow:
+        0 12px 30px rgba(80, 65, 50, 0.045);
+
+    transition: var(--transition);
+
+    text-align: center;
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 38px rgba(80, 65, 50, 0.08);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary);
+
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+
+    color: var(--primary);
+
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #5c554f;
+}
+
+/* =========================================================
+   DEVOTION
+   MAIN VISUAL FOCAL POINT
+========================================================= */
+
+.devotion-section {
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 10% 20%,
+            rgba(235, 215, 193, 0.38),
+            transparent 36%
+        ),
+        radial-gradient(
+            ellipse at 92% 25%,
+            rgba(231, 220, 206, 0.34),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 65% 90%,
+            rgba(220, 207, 191, 0.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #fcfaf7 0%,
+            #f7f0e8 45%,
+            #f5eee5 100%
+        );
+
+    padding: 15px 0;
+}
+
+/* =========================================================
+   DEVOTION HEADER
+   CENTERED ON ALL SCREEN SIZES
+========================================================= */
+
+.devotion-header {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    margin: 0 auto 25px;
+
+    gap: 0;
+}
+
+.devotion-header .section-title {
+    width: 100%;
+
+    text-align: center;
+
+    margin: 0 auto;
+
+    color: #8d8077;
+}
+
+.devotion-divider {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+.divider-line {
+    width: 70px;
+    height: 1px;
+
+    background: rgba(140, 125, 113, 0.45);
+}
+
+.divider-cross {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 14px;
+
+    color: #8d8077;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-shadow:
+        0 1px 2px rgba(80, 65, 50, 0.12);
+}
+
+/* =========================================================
+   DEVOTION LANGUAGE TOGGLE
+========================================================= */
+
+.devotion-language-toggle {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 52px;
+    height: 32px;
+
+    perspective: 600px;
+
+    cursor: pointer;
+    user-select: none;
+
+    outline: none;
+
+    flex-shrink: 0;
+}
+
+.devotion-language-card {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.devotion-language-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.devotion-language-front,
+.devotion-language-back {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(140, 125, 113, 0.65);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    color: var(--primary-dark);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.devotion-language-back {
+    transform: rotateY(180deg);
+}
+
+/* =========================================================
+   DEVOTION CARD
+========================================================= */
+
+.devotion-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(251, 246, 239, 0.68)
+        );
+
+    border:
+        1px solid rgba(140, 125, 113, 0.11);
+
+    border-radius: 22px;
+
+    padding: 55px;
+
+    box-shadow:
+        0 20px 55px rgba(80, 65, 50, 0.07);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.devotion-content {
+    position: relative;
+
+    z-index: 1;
+
+    text-align: left;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.devotion-content h3 {
+    color: var(--primary-dark);
+}
+
+.devotion-content p {
+    color: #5b544e;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   SCRIPTURE
+========================================================= */
+
+.devotion-scripture {
+    margin: 30px auto;
+
+    padding: 25px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(235, 222, 207, 0.38),
+            rgba(246, 238, 228, 0.55)
+        );
+
+    border-left:
+        3px solid rgba(140, 125, 113, 0.72);
+
+    border-radius:
+        0 14px 14px 0;
+
+    max-width: 750px;
+
+    text-align: center;
+}
+
+.scripture-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--primary);
+}
+
+.scripture-quote {
+    margin: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    font-style: italic;
+
+    color: var(--primary-dark);
+}
+
+.scripture-verse {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    color: var(--primary);
+}
+
+/* =========================================================
+   REFLECTION
+========================================================= */
+
+.devotion-reflection {
+    max-width: 750px;
+
+    margin: 35px auto 0;
+
+    padding: 25px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(232, 219, 203, 0.42),
+            rgba(244, 235, 224, 0.55)
+        );
+
+    text-align: center;
+}
+
+.devotion-reflection h4 {
+    color: var(--primary-dark);
+
+    margin-bottom: 10px;
+}
+
+.devotion-reflection p {
+    margin-bottom: 0;
+
+    color: #5b544e;
+}
+
+/* =========================================================
+   VIEW DEVOTIONS
+========================================================= */
+
+.view-devotions {
+    display: flex;
+
+    width: fit-content;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 28px auto 0;
+
+    padding: 11px 20px;
+
+    background:
+        var(--primary);
+
+    color: var(--white);
+
+    border-radius: 30px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 6px 18px rgba(80, 65, 50, 0.10);
+
+    transition:
+        var(--transition);
+}
+
+.view-devotions:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 9px 22px rgba(80, 65, 50, 0.14);
+
+    background:
+        var(--primary-dark);
+}
+
+.view-devotions i {
+    font-size: 0.75rem;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.view-devotions:hover i {
+    transform:
+        translateX(4px);
+}
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events {
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 25%,
+            rgba(232, 220, 205, 0.25),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 85% 80%,
+            rgba(239, 228, 215, 0.30),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #f9f3ec 0%,
+            #fcfaf7 55%,
+            #fbf8f4 100%
+        );
+
+    padding: 100px 0;
+}
+
+.events-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+}
+
+.event-card {
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid rgba(140, 125, 113, 0.09);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(80, 65, 50, 0.05);
+
+    transition:
+        var(--transition);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.event-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(80, 65, 50, 0.08);
+}
+
+.event-date {
+    background:
+        var(--primary);
+
+    color:
+        var(--white);
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+.event-date .day {
+    font-size: 2rem;
+    font-weight: 700;
+
+    display: block;
+}
+
+.event-date .month {
+    font-size: 1.2rem;
+}
+
+.event-content {
+    padding: 25px;
+}
+
+.event-content h3 {
+    color: var(--primary);
+
+    margin-bottom: 10px;
+}
+
+.event-content p {
+    color: #5c554f;
+}
+
+.event-meta {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    color: var(--gray);
+}
+
+.event-meta i {
+    margin-right: 5px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 12% 20%,
+            rgba(229, 215, 198, 0.35),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 90% 75%,
+            rgba(221, 208, 191, 0.27),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #fbf8f4 0%,
+            #f5eee6 55%,
+            #f1e9df 100%
+        );
+
+    padding: 100px 0;
+}
+
+.contact-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+}
+
+.contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.contact-info h3 {
+    color: var(--primary-dark);
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.contact-item i {
+    color: var(--primary);
+
+    font-size: 1.5rem;
+
+    margin-top: 5px;
+}
+
+.contact-item h4 {
+    color: var(--primary-dark);
+
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    color: #5c554f;
+
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.contact-form {
+    background:
+        rgba(255, 255, 255, 0.70);
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(140, 125, 113, 0.10);
+
+    box-shadow:
+        0 15px 40px rgba(80, 65, 50, 0.065);
+
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+.contact-form h3 {
+    color: var(--primary-dark);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 500;
+
+    color: var(--dark);
+}
+
+.form-control {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border:
+        1px solid rgba(140, 125, 113, 0.18);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.68);
+
+    color: var(--dark);
+
+    font-size: 1rem;
+
+    transition:
+        var(--transition);
+}
+
+.form-control:focus {
+    border-color:
+        rgba(140, 125, 113, 0.65);
+
+    outline: none;
+
+    background:
+        var(--white);
+
+    box-shadow:
+        0 0 0 3px rgba(140, 125, 113, 0.07);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #29211b 0%,
+            #211a15 55%,
+            #18120e 100%
+        );
+
+    color:
+        var(--white);
+
+    padding:
+        50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 40px;
+
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: var(--white);
+
+    margin-bottom: 20px;
+
+    font-size: 1.3rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #d5cfca;
+
+    text-decoration: none;
+
+    transition:
+        var(--transition);
+}
+
+.footer-links a:hover {
+    color:
+        var(--white);
+}
+
+.social-links {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    color:
+        var(--white);
+
+    transition:
+        var(--transition);
+}
+
+.social-links a:hover {
+    background:
+        var(--primary);
+
+    transform:
+        translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    color:
+        #c9c3be;
+}
+
+/* =========================================================
+   LANGUAGE TRANSITION
+========================================================= */
+
+body.language-changing section,
+body.language-changing footer {
+    opacity: 0.15;
+
+    transform:
+        translateY(2px);
+}
+
+section,
+footer {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .devotion-card {
+        padding: 40px;
+    }
+
+    .devotion-image {
+        width: 360px;
+        opacity: 0.035;
+    }
+
+    /* Keep devotion header centered */
+
+    .devotion-header {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .devotion-header .section-title,
+    .devotion-label {
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .navbar {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        flex-wrap: nowrap;
+
+        padding: 15px 0;
+
+        width: 100%;
+    }
+
+    /* =====================================================
+       LOGO + HEADER TEXT
+    ===================================================== */
+
+    .logo {
+        font-size: 1.25rem;
+
+        min-width: 0;
+        max-width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        flex-shrink: 1;
+    }
+
+    header .logo img {
+        height: 48px;
+        width: 48px;
+
+        flex-shrink: 0;
+    }
+
+    /* =====================================================
+       LANGUAGE TOGGLE
+    ===================================================== */
+
+    .language-toggle {
+        margin-left: auto;
+        margin-right: 20px;
+
+        width: 64px;
+        height: 30px;
+
+        flex-shrink: 0;
+    }
+
+    .language-slider {
+        width: 28px;
+        height: 24px;
+    }
+
+    .language-toggle.kh-active .language-slider {
+        transform: translateX(28px);
+    }
+
+    /* =====================================================
+       MOBILE NAV
+    ===================================================== */
+
+    .nav-links {
+        position: fixed;
+
+        top: 70px;
+        left: -100%;
+
+        width: 100%;
+
+        background:
+            rgba(255, 255, 255, 0.95);
+
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 20px 0;
+
+        box-shadow:
+            0 10px 20px rgba(60, 45, 30, 0.07);
+
+        transition:
+            var(--transition);
+
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    /* =====================================================
+       HAMBURGER
+    ===================================================== */
+
+    .hamburger {
+        display: flex;
+
+        width: 32px;
+        height: 32px;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* =====================================================
+       TITLES
+    ===================================================== */
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
+
+    .nav-dropdown {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .devotionals-dropdown {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 8px;
+
+        padding: 0;
+
+        transform: none;
+
+        background:
+            rgba(255, 255, 255, 0.58);
+
+        backdrop-filter:
+            blur(8px);
+
+        -webkit-backdrop-filter:
+            blur(8px);
+
+        border-radius: 8px;
+
+        box-shadow: none;
+
+        border:
+            1px solid rgba(140, 125, 113, 0.07);
+
+        /*
+         * Hidden by default on mobile.
+         * JavaScript opens it using .dropdown-open.
+         */
+
+        max-height: 0;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.3s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    /*
+     * Prevent desktop hover behavior from opening
+     * the dropdown accidentally on mobile.
+     */
+
+    .nav-dropdown:hover .devotionals-dropdown,
+    .nav-dropdown:focus-within .devotionals-dropdown {
+        transform: none;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+    }
+
+    /*
+     * JavaScript adds this class when Devotionals
+     * is tapped/clicked.
+     */
+
+    .nav-dropdown.dropdown-open .devotionals-dropdown {
+        max-height: 150px;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+    .nav-dropdown.dropdown-open:hover .devotionals-dropdown,
+    .nav-dropdown.dropdown-open:focus-within .devotionals-dropdown {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+    .devotionals-dropdown a {
+        padding: 8px 12px;
+    }
+
+    /* =====================================================
+       DEVOTION — MOBILE
+       CENTERED
+    ===================================================== */
+
+    .devotion-header {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 0;
+    }
+
+    .devotion-label {
+        width: 100%;
+
+        text-align: center;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .devotion-header .section-title {
+        width: 100%;
+
+        text-align: center;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .devotion-divider {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .devotion-divider-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .devotion-divider-cross {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .devotion-language-toggle {
+        position: absolute;
+
+        right: 0;
+        top: 0;
+    }
+
+    .devotion-card {
+        padding: 30px 25px;
+    }
+
+    .devotion-content {
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    .devotion-content h3 {
+        font-size: 1.7rem;
+    }
+
+    .devotion-image {
+        width: 320px;
+
+        opacity: 0.03;
+    }
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 30px 25px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .about,
+    .services,
+    .devotion-section,
+    .events,
+    .contact {
+        padding: 75px 0;
+    }
+
+    /* =====================================================
+       DEVOTION — SMALL MOBILE
+    ===================================================== */
+
+    .devotion-header {
+        width: 100%;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .devotion-label,
+    .devotion-header .section-title {
+        text-align: center;
+
+        width: 100%;
+    }
+
+    .devotion-divider {
+        align-items: center;
+
+        justify-content: center;
+    }
+
+    .devotion-divider-line {
+        width: 110px;
+    }
+
+    .devotion-divider-line::before,
+    .devotion-divider-line::after {
+        width: 38px;
+    }
+
+    .devotion-divider-line span {
+        margin: 0 9px;
+    }
+
+    .devotion-divider-cross {
+        margin-top: 9px;
+    }
+
+    .devotion-language-toggle {
+        right: 0;
+        top: 0;
+    }
+
+    .devotion-card {
+        padding: 25px 18px;
+    }
+
+    .devotion-content p {
+        font-size: 1rem;
+    }
+
+    .devotion-scripture {
+        padding: 20px;
+    }
+
+    .devotion-reflection {
+        padding: 20px;
+    }
+
+    .service-card {
+        padding: 30px 22px;
+    }
+
+    .event-content {
+        padding: 20px;
+    }
+
+    .devotion-image {
+        width: 280px;
+
+        opacity: 0.025;
+    }
+}
