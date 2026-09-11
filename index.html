@@ -1,133 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KJCF</title>
 
 <link rel="stylesheet" href="./style.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+>
+
+
+</head>
+
+<body>
 
 <header>
 
-    <div class="container">
+<div class="container">
 
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <!-- Logo -->
-            <a href="#" class="logo">
-                <img
-                    src="./assets/120674838_377910233582830_5472428078241435132_n-removebg-preview.png"
-                    alt="KJCF Logo"
-                >
-                &nbsp;KJCF BANGALORE
-            </a>
+        <a href="#" class="logo">
 
-
-           <!-- Navigation Links -->
-
-<ul class="nav-links">
-
-    <li>
-        <a href="./index.html">Home</a>
-    </li>
-
-    <li>
-        <a href="./index.html#about">About</a>
-    </li>
-
-    <li>
-        <a href="./index.html#services">Services</a>
-    </li>
-
-
-
-                <!-- Devotionals Dropdown -->
-                <li class="nav-dropdown">
-
-                    <a href="./devotionals.html" class="active">
-                        Devotionals
-                    </a>
-
-                    <div class="devotionals-dropdown">
-
-                        <a href="./devotionals.html#about" data-devotion-target="about">
-                            About Info
-                        </a>
-
-                        <a href="./devotionals.html#collections" data-devotion-target="collections">
-                            Collections
-                        </a>
-
-                    </div>
-
-                </li>
-
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-
-            <!-- Language Toggle -->
-            <div
-                class="language-toggle"
-                id="languageToggle"
-                role="button"
-                tabindex="0"
-                aria-label="Change language"
-                aria-pressed="false"
+            <img
+                src="./assets/120674838_377910233582830_5472428078241435132_n-removebg-preview.png"
+                alt="KJCF Logo"
             >
 
-                <span class="language-option">EN</span>
-                <span class="language-option">KH</span>
+            KJCF BANGALORE
 
-                <div class="language-slider" id="languageSlider">
-                    EN
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="./index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="./index.html#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="./index.html#services">
+                    Services
+                </a>
+            </li>
+
+
+            <li class="nav-dropdown">
+
+                <a
+                    href="./devotionals.html"
+                    class="active devotionals-toggle"
+                >
+                    Devotionals
+                </a>
+
+
+                <div class="devotionals-dropdown">
+
+                    <a
+                        href="./devotionals.html#about"
+                        data-devotion-target="about"
+                    >
+                        About Info
+                    </a>
+
+                    <a
+                        href="./devotionals.html#collections"
+                        data-devotion-target="collections"
+                    >
+                        Collections
+                    </a>
+
                 </div>
 
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-
-        </nav>
-
-    </div>
-
-</header>
+            </li>
 
 
-<section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-
-            <h1>THE KHASI JAINTIA CHRISTIAN FELLOWSHIP</h1>
-            <h2>Welcomes you</h2>
-
-            <div class="hero-buttons">
-                <a href="#devotions" class="btn btn-primary">
-                    Daily Devotionals
+            <li>
+                <a href="#contact">
+                    Contact
                 </a>
+            </li>
 
-                <a href="./get-connected.html" class="btn btn-secondary">
-                    Get Connected
-                </a>
+        </ul>
+
+
+        <!-- Main website language toggle -->
+
+        <div
+            class="language-toggle"
+            id="languageToggle"
+            role="button"
+            tabindex="0"
+            aria-label="Change language"
+            aria-pressed="false"
+        >
+
+            <span class="language-option">
+                EN
+            </span>
+
+            <span class="language-option">
+                KH
+            </span>
+
+            <div
+                class="language-slider"
+                id="languageSlider"
+            >
+                EN
             </div>
 
         </div>
+
+
+        <button
+            class="hamburger"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+</header>
+
+<main>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>
+                THE KHASI JAINTIA CHRISTIAN FELLOWSHIP
+            </h1>
+
+            <h2>
+                Welcomes you
+            </h2>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#devotions"
+                    class="btn btn-primary"
+                >
+                    Daily Devotionals
+                </a>
+
+                <a
+                    href="./get-connected.html"
+                    class="btn btn-secondary"
+                >
+                    Get Connected
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
 
-<section id="about" class="about">
+
+<!-- ABOUT -->
+
+<!--
+    scroll-margin-top keeps this section below
+    the fixed navigation when #about is opened.
+-->
+
+<section
+    id="about"
+    class="about"
+    style="scroll-margin-top: 90px;"
+>
+
     <div class="container">
 
-        <h2 class="section-title text-center">About Our Church</h2>
-        <div class="section-divider">〰</div>
+        <h2 class="section-title text-center">
+            About Our Church
+        </h2>
+
+        <div class="section-divider">
+            〰
+        </div>
+
 
         <div class="about-content">
+
             <div class="about-text">
 
                 <p>
@@ -138,131 +229,221 @@
                     We believe in creating a welcoming environment where everyone can grow in their relationship with God and with one another.
                 </p>
 
+
                 <div class="about-features">
 
                     <div class="feature">
+
                         <i class="fas fa-cross"></i>
-                        <h4>Biblical Teaching</h4>
+
+                        <h4>
+                            Biblical Teaching
+                        </h4>
+
                     </div>
 
+
                     <div class="feature">
+
                         <i class="fas fa-hands-helping"></i>
-                        <h4>Community Outreach</h4>
+
+                        <h4>
+                            Community Outreach
+                        </h4>
+
                     </div>
 
+
                     <div class="feature">
+
                         <i class="fas fa-users"></i>
-                        <h4>Fellowship</h4>
+
+                        <h4>
+                            Fellowship
+                        </h4>
+
                     </div>
 
+
                     <div class="feature">
+
                         <i class="fas fa-pray"></i>
-                        <h4>Prayer</h4>
+
+                        <h4>
+                            Prayer
+                        </h4>
+
                     </div>
 
                 </div>
+
             </div>
+
         </div>
 
     </div>
+
 </section>
 
+
+
+<!-- SERVICES -->
+
 <section id="services" class="services">
+
     <div class="container">
 
-        <h2 class="section-title text-center">Our Services</h2>
+        <h2 class="section-title text-center">
+            Our Services
+        </h2>
+
 
         <div class="services-grid">
 
+
             <div class="service-card">
+
                 <div class="service-icon">
                     <i class="fas fa-church"></i>
                 </div>
 
-                <h3>Sunday Worship</h3>
+                <h3>
+                    Sunday Worship
+                </h3>
 
                 <p>
                     Join us every Sunday for inspiring worship services that uplift the soul and strengthen faith.
                 </p>
 
                 <p>
-                    <strong>Time:</strong> Sundays, 2:30 PM
+                    <strong>Time:</strong>
+                    Sundays, 2:30 PM
                 </p>
+
             </div>
 
+
+
             <div class="service-card">
+
                 <div class="service-icon">
                     <i class="fas fa-bible"></i>
                 </div>
 
-                <h3>Bible Study</h3>
+                <h3>
+                    Bible Study
+                </h3>
 
                 <p>
                     Deepen your understanding of Scripture through our weekly Bible study groups.
                 </p>
 
                 <p>
-                    <strong>Time:</strong> Wednesdays, 7:00 PM
+                    <strong>Time:</strong>
+                    Wednesdays, 7:00 PM
                 </p>
+
             </div>
 
+
+
             <div class="service-card">
+
                 <div class="service-icon">
                     <i class="fas fa-praying-hands"></i>
                 </div>
 
-                <h3>Prayer Meetings</h3>
+                <h3>
+                    Prayer Meetings
+                </h3>
 
                 <p>
                     Come together in prayer for our church, community, and personal needs.
                 </p>
 
                 <p>
-                    <strong>Time:</strong> Fridays, 6:30 PM
+                    <strong>Time:</strong>
+                    Fridays, 6:30 PM
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
+
+<!-- DEVOTION OF THE DAY -->
+
 <section id="devotions" class="devotion-section">
+
     <div class="container">
+
 
         <div class="devotion-header">
 
-            <div>
-                
-                <div class="devotion-header"> <h2 class="section-title"> Devotion of The Day </h2> <div class="devotion-divider"> <span class="divider-line"></span> <span class="divider-cross">✝</span> <span class="divider-line"></span> </div>
+            <h2 class="section-title">
+                Devotion of The Day
+            </h2>
 
-            <div
-                class="devotion-language-toggle"
-                id="devotionLanguageToggle"
-                role="button"
-                tabindex="0"
-                aria-label="Change devotion language"
-                aria-pressed="true"
-            >
-                <div class="devotion-language-card" id="devotionLanguageCard">
-                    <span class="devotion-language-front"> English</span>
-                    <span class="devotion-language-back"> Khasi</span>
-                </div>
+            <div class="devotion-divider">
+
+                <span class="divider-line"></span>
+
+                <span class="divider-cross">
+                    ✝
+                </span>
+
+                <span class="divider-line"></span>
+
             </div>
 
         </div>
 
+
+
         <div class="devotion-card">
 
-           
             <div class="devotion-content">
 
-                <h3
-                    data-devotion-en=" September 5th 2026"
-                    data-devotion-khasi=" September 5th 2026"
-                >
-                    September 5th, 2026
-                </h3>
+
+                <!-- Date + devotion language toggle -->
+
+                <div class="devotion-date-row">
+
+                    <h3
+                        data-devotion-en="September 5th, 2026"
+                        data-devotion-khasi="September 5th, 2026"
+                    >
+                        September 5th, 2026
+                    </h3>
+
+
+                    <div
+                        class="devotion-language-toggle"
+                        id="devotionLanguageToggle"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Read devotion in Khasi"
+                        aria-pressed="false"
+                    >
+
+                        <span id="devotionLanguageText">
+                            Read in Khasi
+                        </span>
+
+                        <span class="devotion-language-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+
 
                 <p
                     data-devotion-en="Singers and musicians who are famous around the world often perform at concerts in Shillong. Many people desire not only to see them, but especially to hear them. Yet not everyone gets the opportunity to see and hear them. Some people simply come to observe and look at them — how they dress and how they carry themselves."
@@ -270,36 +451,43 @@
                 >
                     Ki nongrwai bad ki nongtem kiba pawnam ha ka pyrthei ki ju wan ban perform ha ki Concerts ha Shillong. Baroh baroh ki ia kwah ym tang ban iohi hynrei khamtam eh ban iohsngew ia ki. Hynrei ym baroh kiba ioh ia ka lad ban iohi bad iohsngew ia ki. Pynban don kiba shu wan tang ban bishar bad ban peit kai ia ki, ki riam kumno bad ki iaid kumno.
                 </p>
-                 <p
-                        data-devotion-en="Everyone should be quick to listen, slow to speak and slow to become angry."
-                        data-devotion-khasi="U Trai Jisu, ha ka dkhot kaba 17 U ong, Naba shisha Nga ong ha phi, ba bun ki nongiathuhlypa bad ki riewhok ki la kwah ban iohi ia kiei kiei ruh ba phi iohi, te kim shym la iohi; bad ban iohsngew ia kiei kiei ruh ba phi iohsngew, te kim shym la iohi bad la iohsngew."
-                    >
-                        U Trai Jisu, ha ka dkhot kaba 17 U ong, Naba shisha Nga ong ha phi, ba bun ki nongiathuhlypa bad ki riewhok ki la kwah ban iohi ia kiei kiei ruh ba phi iohi, te kim shym la iohi; bad ban iohsngew ia kiei kiei ruh ba phi iohsngew, te kim shym la iohi bad la iohsngew.
-                    </p>
+
+
+
+                <p
+                    data-devotion-en="Everyone should be quick to listen, slow to speak and slow to become angry."
+                    data-devotion-khasi="U Trai Jisu, ha ka dkhot kaba 17 U ong, Naba shisha Nga ong ha phi, ba bun ki nongiathuhlypa bad ki riewhok ki la kwah ban iohi ia kiei kiei ruh ba phi iohi, te kim shym la iohi; bad ban iohsngew ia kiei kiei ruh ba phi iohsngew, te kim shym la iohi bad la iohsngew."
+                >
+                    U Trai Jisu, ha ka dkhot kaba 17 U ong, Naba shisha Nga ong ha phi, ba bun ki nongiathuhlypa bad ki riewhok ki la kwah ban iohi ia kiei kiei ruh ba phi iohi, te kim shym la iohi; bad ban iohsngew ia kiei kiei ruh ba phi iohsngew, te kim shym la iohi bad la iohsngew.
+                </p>
+
+
 
                 <div class="devotion-scripture">
 
-            <span class="scripture-label">
-                SCRIPTURE
-            </span>
+                    <span class="scripture-label">
+                        SCRIPTURE
+                    </span>
 
-           
+                    <p
+                        class="scripture-quote"
+                        data-devotion-en="&quot;Those who have ears to hear, let them hear.&quot;"
+                        data-devotion-khasi="&quot;Uba don ki shkor ban sngew, to un sngew.&quot;"
+                    >
+                        "Uba don ki shkor ban sngew, to un sngew."
+                    </p>
 
-            <p class="scripture-quote"
-    data-devotion-en="&quot;Those who have ears to hear, let them hear.&quot;"
-    data-devotion-khasi="&quot;Uba don ki shkor ban sngew, to un sngew.&quot;"
->
-    "Uba don ki shkor ban sngew, to un sngew."
-</p>
-            <span class="scripture-verse"
-            data-devotion-en="Matthew 13:9"
-            data-devotion-khasi="Mathaios 13:9"
-            >
-                
-                Mathaios 13:9
-            </span>
+                    <span
+                        class="scripture-verse"
+                        data-devotion-en="Matthew 13:9"
+                        data-devotion-khasi="Mathaios 13:9"
+                    >
+                        Mathaios 13:9
+                    </span>
 
-        </div>
+                </div>
+
+
 
                 <p
                     data-devotion-en="The teachings of Jesus were precious and unlike anything that had come before. Those who lived in earlier times longed to see the Messiah and hear His teaching, yet they did not have that opportunity."
@@ -308,6 +496,8 @@
                     Ki jinghikai jong U Trai Jisu ki long kiba ym pat don ha ka Testament kaba Rim, ki nonghikai kiba la hikai kum ma U. Kita kiba ha kaba mynbarim ki thrang eh ban iohi ia U Trai Jisu, Uba long U Messiah, ban iohsngew ia ki jinghikai jong U hynrei kim shym la iohi bad la iohsngew.
                 </p>
 
+
+
                 <p
                     data-devotion-en="The teachings of Jesus were extremely precious. However, some of the Pharisees did not come with a desire to hear His valuable teaching. Instead, they came only to find fault with Him and look for reasons to oppose Him."
                     data-devotion-khasi="Ki jinghikai jong U Trai Jisu ki long kiba kordor haduh katta katta. Hynrei kiba na ki Pharisi kim shym la wan da ka jingthrang ban iohsngew ia ki jinghikai kiba kordor jong U, hynrei ki wan tang ban ioh ban kem daw bad ban wad dong pyrshah ia U."
@@ -315,14 +505,17 @@
                     Ki jinghikai jong U Trai Jisu ki long kiba kordor haduh katta katta. Hynrei kiba na ki Pharisi kim shym la wan da ka jingthrang ban iohsngew ia ki jinghikai kiba kordor jong U, hynrei ki wan tang ban ioh ban kem daw bad ban wad dong pyrshah ia U.
                 </p>
 
+
+
                 <div class="devotion-reflection">
 
                     <h4
-                        data-devotion-en=" REFLECTION 💭"
-                        data-devotion-khasi=" KA JINGMUT 💭"
+                        data-devotion-en="REFLECTION"
+                        data-devotion-khasi="KA JINGMUT"
                     >
-                        KA JINGMUT 💭 
+                        KA JINGMUT
                     </h4>
+
 
                     <p
                         data-devotion-en="We need to desire to know and understand the Word of God. A genuine desire for God's Word helps us become attentive and receptive to the truths within it, and responsive to God's will in our lives."
@@ -334,717 +527,527 @@
                 </div>
 
             </div>
+
         </div>
 
-    </div>
 
-   <a href="./devotionals.html" class="view-devotions">
-    Explore Devotions
-    <i class="fas fa-arrow-right"></i>
-</a>
+
+        <a
+            href="./devotionals.html"
+            class="view-devotions"
+        >
+            Explore Devotions
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
 
 </section>
 
 
 
+<!-- COLLECTIONS ANCHOR -->
 
+<!--
+    This invisible anchor gives Collections its own
+    scroll position without changing the visual layout.
+-->
+
+<div
+    id="collections"
+    style="scroll-margin-top: 90px; height: 0; overflow: hidden;"
+></div>
+
+
+
+<!-- EVENTS -->
 
 <section id="events" class="events">
+
     <div class="container">
 
-        <h2 class="section-title text-center">Upcoming Events</h2>
+        <h2 class="section-title text-center">
+            Upcoming Events
+        </h2>
+
 
         <div class="events-grid">
 
+
             <div class="event-card">
+
                 <div class="event-date">
-                    <span class="day">15</span>
-                    <span class="month">October</span>
+
+                    <span class="day">
+                        15
+                    </span>
+
+                    <span class="month">
+                        October
+                    </span>
+
                 </div>
 
+
                 <div class="event-content">
-                    <h3>Fall Festival</h3>
+
+                    <h3>
+                        Fall Festival
+                    </h3>
 
                     <div class="event-meta">
+
                         <span>
                             <i class="far fa-clock"></i>
                             2:00 PM - 6:00 PM
                         </span>
+
                     </div>
 
                     <p>
                         Join us for a fun-filled afternoon with games, food, and fellowship for the whole family.
                     </p>
 
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a
+                        href="#"
+                        class="btn btn-primary"
+                    >
+                        Learn More
+                    </a>
+
                 </div>
+
             </div>
 
+
+
             <div class="event-card">
+
                 <div class="event-date">
-                    <span class="day">22</span>
-                    <span class="month">October</span>
+
+                    <span class="day">
+                        22
+                    </span>
+
+                    <span class="month">
+                        October
+                    </span>
+
                 </div>
 
+
                 <div class="event-content">
-                    <h3>Youth Retreat</h3>
+
+                    <h3>
+                        Youth Retreat
+                    </h3>
 
                     <div class="event-meta">
+
                         <span>
                             <i class="far fa-clock"></i>
                             All Day
                         </span>
+
                     </div>
 
                     <p>
                         A weekend getaway for our youth to grow in faith and build lasting friendships.
                     </p>
 
-                    <a href="#" class="btn btn-primary">Register Now</a>
+                    <a
+                        href="#"
+                        class="btn btn-primary"
+                    >
+                        Register Now
+                    </a>
+
                 </div>
+
             </div>
 
+
+
             <div class="event-card">
+
                 <div class="event-date">
-                    <span class="day">05</span>
-                    <span class="month">November</span>
+
+                    <span class="day">
+                        05
+                    </span>
+
+                    <span class="month">
+                        November
+                    </span>
+
                 </div>
 
+
                 <div class="event-content">
-                    <h3>Community Outreach</h3>
+
+                    <h3>
+                        Community Outreach
+                    </h3>
 
                     <div class="event-meta">
+
                         <span>
                             <i class="far fa-clock"></i>
                             9:00 AM - 12:00 PM
                         </span>
+
                     </div>
 
                     <p>
                         Help us serve our local community through various outreach initiatives.
                     </p>
 
-                    <a href="#" class="btn btn-primary">Volunteer</a>
+                    <a
+                        href="#"
+                        class="btn btn-primary"
+                    >
+                        Volunteer
+                    </a>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
-<section id="contact" class="contact">
-    <div class="container">
 
-       
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
 
         <div class="contact-content">
 
+
             <div class="contact-info">
 
-                <h3>Contact Information</h3>
+                <h3>
+                    Contact Information
+                </h3>
+
 
                 <div class="contact-item">
+
                     <i class="fas fa-map-marker-alt"></i>
+
                     <div>
-                        <h4>Address</h4>
+
+                        <h4>
+                            Address
+                        </h4>
+
                         <p>
                             Slip Road, Hutchins Rd, St Thomas Town, Cooke Town, Bengaluru, Karnataka - 560084
                         </p>
+
                     </div>
+
                 </div>
 
+
+
                 <div class="contact-item">
+
                     <i class="fas fa-phone"></i>
+
                     <div>
-                        <h4>Phone</h4>
-                        <p>+91</p>
+
+                        <h4>
+                            Phone
+                        </h4>
+
+                        <p>
+                            +91
+                        </p>
+
                     </div>
+
                 </div>
 
+
+
                 <div class="contact-item">
+
                     <i class="fas fa-envelope"></i>
+
                     <div>
-                        <h4>Email</h4>
-                        <p>kjcfbangalore@gmail.com</p>
+
+                        <h4>
+                            Email
+                        </h4>
+
+                        <p>
+                            kjcfbangalore@gmail.com
+                        </p>
+
                     </div>
+
                 </div>
 
             </div>
 
+
+
             <div class="contact-form">
 
-                <h3>Send Us a Message</h3>
+                <h3>
+                    Send Us a Message
+                </h3>
+
 
                 <form id="contactForm">
 
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
 
                     <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" class="form-control" required>
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            required
+                        >
+
                     </div>
+
+
 
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" class="form-control" rows="5" required></textarea>
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            required
+                        >
+
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            class="form-control"
+                            rows="5"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
                         Send Message
                     </button>
 
                 </form>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
+</main>
+
+<!-- FOOTER -->
+
 <footer>
-    <div class="container">
 
-        <div class="footer-content">
 
-            <div class="footer-column">
+<div class="container">
 
-                <h3>KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH</h3>
+    <div class="footer-content">
 
-                <div class="social-links">
 
-                    <a
-                        href="https://www.facebook.com/p/KJCFKhasi-Jaintia-Christian-Fellowship-Bangalore-100064421300917/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                    >
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+        <div class="footer-column">
 
-                    <a
-                        href="https://www.instagram.com/kjcfbangalore/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <i class="fab fa-instagram"></i>
-                    </a>
+            <h3>
+                KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH
+            </h3>
 
-                    <a
-                        href="https://www.youtube.com/@kjcfbangalore9656"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="YouTube"
-                    >
-                        <i class="fab fa-youtube"></i>
-                    </a>
 
-                    <a href="#" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+            <div class="social-links">
 
-                </div>
-            </div>
+                <a
+                    href="https://www.facebook.com/p/KJCFKhasi-Jaintia-Christian-Fellowship-Bangalore-100064421300917/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
 
-            <div class="footer-column">
 
-                <h3>Quick Links</h3>
+                <a
+                    href="https://www.instagram.com/kjcfbangalore/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
 
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
 
-            </div>
+                <a
+                    href="https://www.youtube.com/@kjcfbangalore9656"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                >
+                    <i class="fab fa-youtube"></i>
+                </a>
 
-            <div class="footer-column">
 
-                <h3>Ministries</h3>
-
-                <ul class="footer-links">
-                    <li><a href="#">Children's Ministry</a></li>
-                    <li><a href="#">Youth Ministry</a></li>
-                    <li><a href="#">Women's Fellowship</a></li>
-                    <li><a href="#">Men's Ministry</a></li>
-                    <li><a href="#">Outreach Programs</a></li>
-                </ul>
+                <a
+                    href="#"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
 
             </div>
 
         </div>
 
-        <div class="copyright">
-            <p>&copy; 2026 KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH. All Rights Reserved.</p>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#events">
+                        Events
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                Ministries
+            </h3>
+
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="#">
+                        Children's Ministry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Youth Ministry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Women's Fellowship
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Men's Ministry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Outreach Programs
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
 
     </div>
+
+
+
+    <div class="copyright">
+
+        <p>
+            &copy; 2026 KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH. All Rights Reserved.
+        </p>
+
+    </div>
+
+</div>
+
+
 </footer>
 
+<script src="./script.js"></script>
 
-<script>
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+</body>
 
-hamburger?.addEventListener('click', () => {
-    const isOpen = navLinks?.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    hamburger.setAttribute(
-        'aria-label',
-        isOpen ? 'Close navigation menu' : 'Open navigation menu'
-    );
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks?.classList.remove('active');
-        hamburger?.setAttribute('aria-expanded', 'false');
-        hamburger?.setAttribute('aria-label', 'Open navigation menu');
-    });
-});
-
-// Close mobile navigation when clicking outside it
-document.addEventListener('click', e => {
-    if (!navLinks || !hamburger) return;
-
-    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-        navLinks.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'Open navigation menu');
-    }
-});
-
-// Close mobile navigation when returning to desktop width
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        navLinks?.classList.remove('active');
-        hamburger?.setAttribute('aria-expanded', 'false');
-        hamburger?.setAttribute('aria-label', 'Open navigation menu');
-    }
-});
-
-
-const contactForm = document.getElementById('contactForm');
-
-contactForm?.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    contactForm.reset();
-});
-
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        const targetId = anchor.getAttribute('href');
-
-        if (targetId === '#') return;
-
-        e.preventDefault();
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-
-const aboutFeatures = document.querySelectorAll('.feature');
-
-if (aboutFeatures.length) {
-    const observer = new IntersectionObserver(entries => {
-
-        if (entries.some(entry => entry.isIntersecting)) {
-
-            aboutFeatures.forEach((feature, index) => {
-                setTimeout(() => feature.classList.add('visible'), index * 250);
-            });
-
-            observer.disconnect();
-        }
-
-    }, { threshold: .2 });
-
-    aboutFeatures.forEach(feature => observer.observe(feature));
-}
-
-
-/* MAIN WEBSITE TRANSLATIONS */
-
-const khasiTranslations = {
-    "Home": "Ing",
-    "About": "Shaphang",
-    "About Us": "Shaphang Ngi",
-    "Services": "Kam",
-    "Events": "Jingjia",
-    "Contact": "Iakren",
-    "Devotionals": "Jingpuson",
-
-    "THE KHASI JAINTIA CHRISTIAN FELLOWSHIP":
-        "KA KHASI JAINTIA CHRISTIAN FELLOWSHIP",
-
-    "Welcomes you":
-        "Ka pdiang sngewbha ia phi",
-
-    "Daily Devotionals":
-        "Ki Jingpuson",
-
-    "Get Connected":
-        "Iakynduh bad Ngi",
-
-    "About Our Church":
-        "Shaphang Ka Balang Jong Ngi",
-
-    "KJCF is a non-denominational Church comprising of various christian denominations from the Khasi and Jaintia Hills, Meghalaya.":
-        "KJCF ka dei ka Balang kaba ym don kawei ka denomination, kaba kynthup ia ki denomination Khristan bapher bapher na ki Khasi bad Jaintia Hills, Meghalaya.",
-
-    "We believe in creating a welcoming environment where everyone can grow in their relationship with God and with one another.":
-        "Ngi ngeit ha kaba thaw ia ka jaka kaba pdiang sngewbha ia baroh, ha kaba baroh ki lah ban san ha ka jingïadei jong ki bad U Blei bad bad iwei ia iwei.",
-
-    "Biblical Teaching":
-        "Ka Jinghikai Na Ka Baibl",
-
-    "Community Outreach":
-        "Ka Jingtrei Shapoh Ka Imlang Sahlang",
-
-    "Fellowship":
-        "Ka Jingiasyllok",
-
-    "Prayer":
-        "Ka Jingduwai",
-
-    "Our Services":
-        "Ki Jingmane Jong Ngi",
-
-    "Sunday Worship":
-        "Ka Jingmane Ha Ka Sngi U Trai",
-
-    "Join us every Sunday for inspiring worship services that uplift the soul and strengthen faith.":
-        "Ngi khot sngewbha ia phi man ka Sngi U Trai ban iashim bynta ha ka jingmane kaba pynshlur ia ka mynsiem bad pynkhlain ia ka jingngeit.",
-
-    "Time:":
-        "Por:",
-
-    "Sundays, 2:30 PM":
-        "Sngi U Trai, 2:30 PM",
-
-    "Bible Study":
-        "Ka Jingpule Baibl",
-
-    "Deepen your understanding of Scripture through our weekly Bible study groups.":
-        "Pynjylliew ia ka jingsngewthuh jong phi ia ka Ktien U Blei lyngba ki kynhun pule Baibl man la ka taiew.",
-
-    "Wednesdays, 7:00 PM":
-        "Balang, 7:00 PM",
-
-    "Prayer Meetings":
-        "Ki Jingialang Jingduwai",
-
-    "Come together in prayer for our church, community, and personal needs.":
-        "To ngin iawan lang ha ka jingduwai na ka bynta ka balang jong ngi, ka imlang sahlang, bad ki jingdonkam jong ngi hi.",
-
-    "Fridays, 6:30 PM":
-        "Thohdieng, 6:30 PM",
-
-    "Upcoming Events":
-        "Ki Jingjia Ki Ban Wan",
-
-    "October":
-        "Risaw",
-
-    "November":
-        "Naiwieng",
-
-    "Fall Festival":
-        "Ka Jingkhawai",
-
-    "Youth Retreat":
-        "Ka Jingiaseng Samla",
-
-    "All Day":
-        "Baroh Ka Sngi",
-
-    "Join us for a fun-filled afternoon with games, food, and fellowship for the whole family.":
-        "Iaishim bynta lang bad ngi ha ka janmiet kaba dap da ki jingïalehkai, ki jingbam bad ka jingiasyllok na ka bynta ka longïing baroh.",
-
-    "A weekend getaway for our youth to grow in faith and build lasting friendships.":
-        "Ka por kyrkieh na ka bynta ki samla jong ngi ban san ha ka jingngeit bad tei ia ki paralok kiba neh.",
-
-    "Help us serve our local community through various outreach initiatives.":
-        "Iarap ia ngi ban shakri ia ka imlang sahlang jong ngi lyngba ki kam shakri bapher bapher.",
-
-    "Learn More":
-        "Tip Shuh Shuh",
-
-    "Register Now":
-        "Register Mynta",
-
-    "Volunteer":
-        "Iarap",
-
-    "Get In Touch":
-        "Iakren bad Ngi",
-
-    "Contact Information":
-        "Ki Jingtip Ban Iakynduh Ngi",
-
-    "Address":
-        "Ka Address",
-
-    "Phone":
-        "Ka Phone",
-
-    "Email":
-        "Ka Email",
-
-    "Send Us a Message":
-        "Phah Khubor Sha Ngi",
-
-    "Your Name":
-        "Ka Kyrteng Jong Phi",
-
-    "Your Email":
-        "Ka Email Jong Phi",
-
-    "Your Message":
-        "Ka Khubor Jong Phi",
-
-    "Send Message":
-        "Phah Khubor",
-
-    "KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH":
-        "KA KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH",
-
-    "Quick Links":
-        "Ki Link Ba Kongsan",
-
-    "Ministries":
-        "Ki Ministry",
-
-    "Children's Ministry":
-        "Ka Ministry Ki Khynnah",
-
-    "Youth Ministry":
-        "Ka Ministry Ki Samla",
-
-    "Women's Fellowship":
-        "Ka Jingiasyllok Ki Longkmie",
-
-    "Men's Ministry":
-        "Ka Ministry Ki Shynrang",
-
-    "Outreach Programs":
-        "Ki Prokram Shakri",
-
-    "All Rights Reserved.":
-        "La Riang Bishar Ïa Baroh Ki Hok."
-};
-
-
-const originalTexts = new WeakMap();
-
-function getTextNodes(element) {
-    const nodes = [];
-
-    const walker = document.createTreeWalker(
-        element,
-        NodeFilter.SHOW_TEXT,
-        {
-            acceptNode(node) {
-                if (!node.nodeValue.trim()) {
-                    return NodeFilter.FILTER_REJECT;
-                }
-
-                const parent = node.parentElement;
-
-                if (
-                    !parent ||
-                    parent.closest(
-                        '.language-toggle,.devotion-language-toggle,#devotions,script,style'
-                    )
-                ) {
-                    return NodeFilter.FILTER_REJECT;
-                }
-
-                return NodeFilter.FILTER_ACCEPT;
-            }
-        }
-    );
-
-    let node;
-
-    while (node = walker.nextNode()) {
-        nodes.push(node);
-    }
-
-    return nodes;
-}
-
-
-function changeLanguage(language) {
-    getTextNodes(document.body).forEach(node => {
-
-        if (!originalTexts.has(node)) {
-            originalTexts.set(node, node.nodeValue);
-        }
-
-        const original = originalTexts.get(node);
-        const trimmed = original.trim();
-
-        if (language === 'kh' && khasiTranslations[trimmed]) {
-            const leading = original.match(/^\s*/)?.[0] || '';
-            const trailing = original.match(/\s*$/)?.[0] || '';
-
-            node.nodeValue =
-                leading +
-                khasiTranslations[trimmed] +
-                trailing;
-        } else if (language === 'en') {
-            node.nodeValue = original;
-        }
-    });
-}
-
-
-/* MAIN LANGUAGE TOGGLE */
-
-const languageToggle = document.getElementById('languageToggle');
-const languageSlider = document.getElementById('languageSlider');
-
-let currentLanguage = 'en';
-
-function toggleLanguage() {
-
-    if (document.body.classList.contains('language-changing')) return;
-
-    document.body.classList.add('language-changing');
-
-    setTimeout(() => {
-
-        currentLanguage = currentLanguage === 'en' ? 'kh' : 'en';
-
-        const isKhasi = currentLanguage === 'kh';
-
-        languageToggle?.classList.toggle('kh-active', isKhasi);
-
-        if (languageSlider) {
-            languageSlider.textContent = isKhasi ? 'KH' : 'EN';
-        }
-
-        document.documentElement.lang = isKhasi ? 'kha' : 'en';
-
-        changeLanguage(currentLanguage);
-
-        languageToggle?.setAttribute(
-            'aria-pressed',
-            isKhasi ? 'true' : 'false'
-        );
-
-        setTimeout(() => {
-            document.body.classList.remove('language-changing');
-        }, 200);
-
-    }, 300);
-}
-
-
-languageToggle?.addEventListener('click', toggleLanguage);
-
-languageToggle?.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleLanguage();
-    }
-});
-
-
-/* DEVOTION LANGUAGE */
-
-const devotionLanguageToggle =
-    document.getElementById('devotionLanguageToggle');
-
-const devotionLanguageCard =
-    document.getElementById('devotionLanguageCard');
-
-const devotionElements =
-    document.querySelectorAll(
-        '[data-devotion-en][data-devotion-khasi]'
-    );
-
-let devotionLanguage = 'kh';
-
-function setDevotionLanguage(language) {
-    devotionElements.forEach(element => {
-        element.textContent =
-            element.getAttribute(
-                language === 'en'
-                    ? 'data-devotion-en'
-                    : 'data-devotion-khasi'
-            );
-    });
-}
-
-
-function toggleDevotionLanguage() {
-
-    if (!devotionLanguageCard) return;
-
-    devotionLanguage =
-        devotionLanguage === 'kh' ? 'en' : 'kh';
-
-    const isKhasi = devotionLanguage === 'kh';
-
-    devotionLanguageCard.classList.toggle(
-        'flipped',
-        isKhasi
-    );
-
-    setDevotionLanguage(devotionLanguage);
-
-    devotionLanguageToggle?.setAttribute(
-        'aria-pressed',
-        isKhasi ? 'true' : 'false'
-    );
-}
-
-
-devotionLanguageCard?.classList.add('flipped');
-
-setDevotionLanguage('kh');
-
-devotionLanguageToggle?.addEventListener(
-    'click',
-    toggleDevotionLanguage
-);
-
-devotionLanguageToggle?.addEventListener(
-    'keydown',
-    e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleDevotionLanguage();
-        }
-    }
-);
-
-
-    const devotionalsToggle = document.getElementById("devotionalsToggle");
-    const devotionalsMenu = document.getElementById("devotionalsMenu");
-
-    devotionalsToggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        devotionalsMenu.classList.toggle("show");
-    });
-
-
-</script>
+</html>

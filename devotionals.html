@@ -25,150 +25,112 @@
 <!-- =========================================================
      HEADER / NAVIGATION
 ========================================================= -->
-
 <header>
 
-    <div class="container">
 
-        <nav class="navbar">
+<div class="container">
 
-            <!-- LOGO -->
+    <nav class="navbar">
 
-            <a
-                href="./index.html"
-                class="logo"
+        <a href="./index.html" class="logo">
+
+            <img
+                src="./assets/120674838_377910233582830_5472428078241435132_n-removebg-preview.png"
+                alt="KJCF Logo"
             >
 
-                <img
-                    src="./assets/120674838_377910233582830_5472428078241435132_n-removebg-preview.png"
-                    alt="KJCF Logo"
-                >
+            KJCF BANGALORE
 
-                <span>
-                    KJCF BANGALORE
-                </span>
+        </a>
 
-            </a>
+        <ul class="nav-links">
 
+            <li>
+                <a href="./index.html">Home</a>
+            </li>
 
-            <!-- NAVIGATION LINKS -->
+            <li>
+                <a href="./index.html#about">About</a>
+            </li>
 
-            <ul class="nav-links">
+            <li>
+                <a href="./index.html#services">Services</a>
+            </li>
 
-                <li>
-                    <a href="./index.html">
-                        Home
-                    </a>
-                </li>
+            <li class="nav-dropdown">
 
+                <a href="./devotionals.html" class="active devotionals-toggle">
+                    Devotionals
+                </a>
 
-                <li>
-                    <a href="./index.html#about">
-                        About
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="./index.html#services">
-                        Services
-                    </a>
-                </li>
-
-
-                <!-- DEVOTIONALS -->
-
-                <li class="nav-dropdown">
+                <div class="devotionals-dropdown">
 
                     <a
-                        href="./devotionals.html"
-                        class="active"
-                        aria-expanded="false"
+                        href="./devotionals.html#about"
+                        data-devotion-target="about"
                     >
-                        Devotionals
+                        About Info
                     </a>
 
-
-                    <div class="devotionals-dropdown">
-
-                        <a
-                            href="./devotionals.html#about"
-                            data-devotion-target="about"
-                        >
-                            About Info
-                        </a>
-
-
-                        <a
-                            href="./devotionals.html#collections"
-                            data-devotion-target="collections"
-                        >
-                            Collections
-                        </a>
-
-                    </div>
-
-                </li>
-
-
-                <li>
-                    <a href="./index.html#contact">
-                        Contact
+                    <a
+                        href="./devotionals.html#collections"
+                        data-devotion-target="collections"
+                    >
+                        Collections
                     </a>
-                </li>
 
-            </ul>
-
-
-            <!-- LANGUAGE TOGGLE -->
-
-            <div
-                class="language-toggle"
-                id="languageToggle"
-                role="button"
-                tabindex="0"
-                aria-label="Change language"
-                aria-pressed="false"
-            >
-
-                <span class="language-option">
-                    EN
-                </span>
-
-
-                <span class="language-option">
-                    KH
-                </span>
-
-
-                <div
-                    class="language-slider"
-                    id="languageSlider"
-                >
-                    KH
                 </div>
 
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <!-- Main website language toggle -->
+
+        <div
+            class="language-toggle"
+            id="languageToggle"
+            role="button"
+            tabindex="0"
+            aria-label="Change language"
+            aria-pressed="false"
+        >
+
+            <span class="language-option">EN</span>
+
+            <span class="language-option">KH</span>
+
+            <div
+                class="language-slider"
+                id="languageSlider"
+            >
+                EN
             </div>
 
+        </div>
 
-            <!-- HAMBURGER -->
+        <button
+            class="hamburger"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
 
-            <button
-                class="hamburger"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
+            <i class="fas fa-bars"></i>
 
-                <i class="fas fa-bars"></i>
+        </button>
 
-            </button>
+    </nav>
 
-        </nav>
+</div>
 
-    </div>
 
 </header>
+
 
 
 <!-- =========================================================
@@ -1184,835 +1146,8 @@
 
 </footer>
 
-
-<script>
-
-    /* =========================================================
-       RESPONSIVE NAVIGATION
-    ========================================================= */
-
-    const hamburger =
-        document.querySelector('.hamburger');
-
-    const navLinks =
-        document.querySelector('.nav-links');
-
-    const navDropdown =
-        document.querySelector('.nav-dropdown');
-
-    const devotionalsLink =
-        navDropdown?.querySelector(':scope > a');
-
-
-    /* =========================================================
-       HAMBURGER OPEN / CLOSE
-    ========================================================= */
-
-    hamburger?.addEventListener(
-        'click',
-        () => {
-
-            const isOpen =
-                navLinks?.classList.toggle('active');
-
-
-            hamburger.setAttribute(
-                'aria-expanded',
-                isOpen ? 'true' : 'false'
-            );
-
-
-            hamburger.setAttribute(
-                'aria-label',
-                isOpen
-                    ? 'Close navigation menu'
-                    : 'Open navigation menu'
-            );
-
-
-            const icon =
-                hamburger.querySelector('i');
-
-
-            if (icon) {
-
-                icon.classList.toggle(
-                    'fa-bars',
-                    !isOpen
-                );
-
-
-                icon.classList.toggle(
-                    'fa-xmark',
-                    isOpen
-                );
-
-            }
-
-        }
-    );
-
-
-    /* =========================================================
-       DEVOTIONALS DROPDOWN
-    ========================================================= */
-
-    devotionalsLink?.addEventListener(
-        'click',
-        event => {
-
-            /*
-               Desktop:
-               Allow normal navigation.
-            */
-
-            if (window.innerWidth > 768) {
-
-                return;
-
-            }
-
-
-            /*
-               Mobile:
-               Open the dropdown instead.
-            */
-
-            event.preventDefault();
-
-
-            const isOpen =
-                navDropdown?.classList.toggle(
-                    'dropdown-open'
-                );
-
-
-            devotionalsLink?.setAttribute(
-                'aria-expanded',
-                String(isOpen)
-            );
-
-        }
-    );
-
-
-    /* =========================================================
-       CLOSE MENU AFTER NORMAL NAV LINK
-    ========================================================= */
-
-    document
-        .querySelectorAll('.nav-links a')
-        .forEach(link => {
-
-            link.addEventListener(
-                'click',
-                () => {
-
-                    /*
-                       Keep menu open when
-                       Devotionals is being toggled.
-                    */
-
-                    if (
-                        window.innerWidth <= 768 &&
-                        link === devotionalsLink
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    navLinks?.classList.remove(
-                        'active'
-                    );
-
-
-                    navDropdown?.classList.remove(
-                        'dropdown-open'
-                    );
-
-
-                    devotionalsLink?.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-
-
-                    hamburger?.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-
-
-                    hamburger?.setAttribute(
-                        'aria-label',
-                        'Open navigation menu'
-                    );
-
-
-                    const icon =
-                        hamburger?.querySelector('i');
-
-
-                    if (icon) {
-
-                        icon.classList.add(
-                            'fa-bars'
-                        );
-
-
-                        icon.classList.remove(
-                            'fa-xmark'
-                        );
-
-                    }
-
-                }
-            );
-
-        });
-
-
-    /* =========================================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
-    ========================================================= */
-
-    document.addEventListener(
-        'click',
-        event => {
-
-            if (
-                !navLinks ||
-                !hamburger
-            ) {
-
-                return;
-
-            }
-
-
-            if (
-                !navLinks.contains(event.target) &&
-                !hamburger.contains(event.target)
-            ) {
-
-                navLinks.classList.remove(
-                    'active'
-                );
-
-
-                navDropdown?.classList.remove(
-                    'dropdown-open'
-                );
-
-
-                devotionalsLink?.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-
-                hamburger.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-
-                hamburger.setAttribute(
-                    'aria-label',
-                    'Open navigation menu'
-                );
-
-
-                const icon =
-                    hamburger.querySelector('i');
-
-
-                if (icon) {
-
-                    icon.classList.add(
-                        'fa-bars'
-                    );
-
-
-                    icon.classList.remove(
-                        'fa-xmark'
-                    );
-
-                }
-
-            }
-
-        }
-    );
-
-
-    /* =========================================================
-       RESET MOBILE NAV WHEN RETURNING TO DESKTOP
-    ========================================================= */
-
-    window.addEventListener(
-        'resize',
-        () => {
-
-            if (window.innerWidth > 768) {
-
-                navLinks?.classList.remove(
-                    'active'
-                );
-
-
-                navDropdown?.classList.remove(
-                    'dropdown-open'
-                );
-
-
-                devotionalsLink?.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-
-                hamburger?.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-
-                hamburger?.setAttribute(
-                    'aria-label',
-                    'Open navigation menu'
-                );
-
-
-                const icon =
-                    hamburger?.querySelector('i');
-
-
-                if (icon) {
-
-                    icon.classList.add(
-                        'fa-bars'
-                    );
-
-
-                    icon.classList.remove(
-                        'fa-xmark'
-                    );
-
-                }
-
-            }
-
-        }
-    );
-
-
-    /* =========================================================
-       TABS
-    ========================================================= */
-
-    const tabButtons =
-        document.querySelectorAll(
-            '.tab-button'
-        );
-
-
-    const tabContents =
-        document.querySelectorAll(
-            '.tab-content'
-        );
-
-
-    function scrollToTabs() {
-
-        const tabs =
-            document.querySelector(
-                '.devotion-tabs'
-            );
-
-
-        const header =
-            document.querySelector(
-                'header'
-            );
-
-
-        if (!tabs) {
-
-            return;
-
-        }
-
-
-        const headerHeight =
-            header
-                ? header.offsetHeight
-                : 0;
-
-
-        const targetPosition =
-            tabs.getBoundingClientRect().top +
-            window.scrollY -
-            headerHeight -
-            20;
-
-
-        window.scrollTo({
-
-            top: targetPosition,
-
-            behavior: 'smooth'
-
-        });
-
-    }
-
-
-    function activateTab(
-        target,
-        shouldScroll = true,
-        updateUrl = true
-    ) {
-
-        const targetButton =
-            document.querySelector(
-                `.tab-button[data-tab="${target}"]`
-            );
-
-
-        const targetContent =
-            document.getElementById(
-                target
-            );
-
-
-        if (
-            !targetButton ||
-            !targetContent
-        ) {
-
-            return;
-
-        }
-
-
-        tabButtons.forEach(
-            button => {
-
-                button.classList.remove(
-                    'active'
-                );
-
-            }
-        );
-
-
-        tabContents.forEach(
-            content => {
-
-                content.classList.remove(
-                    'active'
-                );
-
-            }
-        );
-
-
-        targetButton.classList.add(
-            'active'
-        );
-
-
-        targetContent.classList.add(
-            'active'
-        );
-
-
-        if (updateUrl) {
-
-            history.replaceState(
-                null,
-                '',
-                `./devotionals.html#${target}`
-            );
-
-        }
-
-
-        if (shouldScroll) {
-
-            setTimeout(
-                scrollToTabs,
-                50
-            );
-
-        }
-
-    }
-
-
-    tabButtons.forEach(
-        button => {
-
-            button.addEventListener(
-                'click',
-                () => {
-
-                    const target =
-                        button.getAttribute(
-                            'data-tab'
-                        );
-
-
-                    activateTab(
-                        target,
-                        true,
-                        true
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-    /* =========================================================
-       OPEN TAB FROM URL HASH
-    ========================================================= */
-
-    function openTabFromHash() {
-
-        const hash =
-            window.location.hash.substring(1);
-
-
-        if (
-            hash !== 'about' &&
-            hash !== 'collections'
-        ) {
-
-            return;
-
-        }
-
-
-        activateTab(
-            hash,
-            false,
-            false
-        );
-
-
-        setTimeout(
-            () => {
-
-                scrollToTabs();
-
-            },
-            150
-        );
-
-    }
-
-
-    openTabFromHash();
-
-
-    window.addEventListener(
-        'hashchange',
-        openTabFromHash
-    );
-
-
-    /* =========================================================
-       LANGUAGE TOGGLE
-    ========================================================= */
-
-    const languageToggle =
-        document.getElementById(
-            'languageToggle'
-        );
-
-
-    const languageSlider =
-        document.getElementById(
-            'languageSlider'
-        );
-
-
-    /*
-       The Devotionals page starts in Khasi.
-    */
-
-    let currentLanguage = 'kh';
-
-
-    function updateLanguage() {
-
-        const isKhasi =
-            currentLanguage === 'kh';
-
-
-        languageToggle?.classList.toggle(
-            'kh-active',
-            isKhasi
-        );
-
-
-        if (languageSlider) {
-
-            languageSlider.textContent =
-                isKhasi
-                    ? 'KH'
-                    : 'EN';
-
-        }
-
-
-        document.documentElement.lang =
-            isKhasi
-                ? 'kha'
-                : 'en';
-
-
-        document.body.classList.toggle(
-            'english',
-            !isKhasi
-        );
-
-
-        languageToggle?.setAttribute(
-            'aria-pressed',
-            String(!isKhasi)
-        );
-
-    }
-
-
-    function toggleLanguage() {
-
-        currentLanguage =
-            currentLanguage === 'kh'
-                ? 'en'
-                : 'kh';
-
-
-        updateLanguage();
-
-    }
-
-
-    languageToggle?.addEventListener(
-        'click',
-        toggleLanguage
-    );
-
-
-    languageToggle?.addEventListener(
-        'keydown',
-        event => {
-
-            if (
-                event.key === 'Enter' ||
-                event.key === ' '
-            ) {
-
-                event.preventDefault();
-
-                toggleLanguage();
-
-            }
-
-        }
-    );
-
-
-    updateLanguage();
-
-
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
-
-    const revealElements =
-        document.querySelectorAll(
-            '.reveal'
-        );
-
-
-    const revealObserver =
-        new IntersectionObserver(
-
-            (entries, observer) => {
-
-                entries.forEach(
-                    entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                'visible'
-                            );
-
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-
-            {
-                threshold: 0.15
-            }
-
-        );
-
-
-    revealElements.forEach(
-        element => {
-
-            revealObserver.observe(
-                element
-            );
-
-        }
-    );
-
-
-    /* =========================================================
-       DEVOTIONAL LIBRARY
-       SLOW TYPING
-    ========================================================= */
-
-    const libraryLabel =
-        document.getElementById(
-            'libraryLabel'
-        );
-
-
-    const libraryHeading =
-        document.querySelector(
-            '.library-heading'
-        );
-
-
-    const libraryText =
-        'DEVOTIONAL LIBRARY';
-
-
-    let typingStarted = false;
-
-
-    function startLibraryTyping() {
-
-        if (
-            typingStarted ||
-            !libraryLabel
-        ) {
-
-            return;
-
-        }
-
-
-        typingStarted = true;
-
-
-        let index = 0;
-
-
-        function typeCharacter() {
-
-            if (
-                index <
-                libraryText.length
-            ) {
-
-                libraryLabel.textContent +=
-                    libraryText.charAt(
-                        index
-                    );
-
-
-                index++;
-
-
-                setTimeout(
-                    typeCharacter,
-                    100
-                );
-
-            }
-
-        }
-
-
-        setTimeout(
-            typeCharacter,
-            350
-        );
-
-    }
-
-
-    if (libraryHeading) {
-
-        const libraryTypingObserver =
-            new IntersectionObserver(
-
-                (entries, observer) => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target.classList.add(
-                                    'visible'
-                                );
-
-
-                                startLibraryTyping();
-
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-                    threshold: 0.25
-                }
-
-            );
-
-
-        libraryTypingObserver.observe(
-            libraryHeading
-        );
-
-    }
-
-</script>
+<script src="./devotionals.js"></script>
 
 </body>
 
-</html>
+</html> 
