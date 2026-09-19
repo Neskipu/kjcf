@@ -1015,7 +1015,7 @@ if (contactForm) {
 
                 const response =
                     await fetch(
-                        'http://localhost:4000/api/contacts',
+                        'https://kjcf.onrender.com/api/contacts',
                         {
                             method: 'POST',
 
