@@ -638,31 +638,13 @@ header .logo img {
 }
 
 .devotion-hero-icon:hover {
-    transform:
-        scale(1.08)
-        rotate(-5deg);
+    transform:none;
+       
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* Desktop hover only */
-@media (hover: hover) and (pointer: fine) {
-    .devotion-hero-icon:hover {
-        transform: none;
-        box-shadow:
-            0 15px 35px rgba(0, 0, 0, 0.25);
-    }
-}
-
-
-/* Phone / touchscreen */
-@media (hover: none) and (pointer: coarse) {
-    .devotion-hero-icon:hover,
-    .devotion-hero-icon:active {
-        transform: none;
-    }
-}
 
 
 .devotion-hero h1 {
