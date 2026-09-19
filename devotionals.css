@@ -637,15 +637,17 @@ header .logo img {
     cursor: pointer;
 }
 
-.devotion-hero-icon:hover {
-    transform:none;
-       
+/* Desktop hover effect */
+@media (hover: hover) and (pointer: fine) {
+    .devotion-hero-icon:hover {
+        transform:
+            scale(1.08)
+            rotate(-5deg);
 
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.25);
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.25);
+    }
 }
-
-
 
 .devotion-hero h1 {
     color:
