@@ -4,18 +4,14 @@ const { Pool } = require("pg");
 require("dotenv").config();
 
 const app = express();
-const PORT = 3000;
-
+const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+   connectionString: process.env.DATABASE_URL,
+
 });
 
 app.get("/", (req, res) => {
@@ -42,15 +38,19 @@ app.get("/test-db", async (req, res) => {
 });
 
 app.post("/api/contacts", async (req, res) => {
-    try {
-        const { name, email, message } = req.body;
+    
 
-        const result = await pool.query(
-            `INSERT INTO contacts (name, email, message)
-             VALUES ($1, $2, $3)
-             RETURNING *`,
-            [name, email, message]
-        );
+    try {
+        const { name, email, phone, message } = req.body;
+
+       const result = await pool.query(
+    `INSERT INTO contacts (name, email, phone, message)
+     VALUES ($1, $2, $3, $4)
+     RETURNING *`,
+    [name, email, phone, message]
+);
+
+
 
         res.status(201).json({
             message: "Contact submitted successfully!",
@@ -66,6 +66,6 @@ app.post("/api/contacts", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`KJCF backend running at http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`KJCF backend running on port ${PORT}`);
 });
