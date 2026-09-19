@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJCF Admin | Visitor Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="admin-logo">
+                <div class="logo-mark">KJCF</div>
+                <div>
+                    <h2>KJCF</h2>
+                    <span>ADMIN</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../index.html" class="nav-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>View Website</span>
+                </a>
+
+            </nav>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">WEBSITE ANALYTICS</p>
+                    <h1>Visitor Dashboard</h1>
+                    <p class="subtitle">
+                        See how people are visiting the KJCF Bangalore website.
+                    </p>
+                </div>
+
+                <div class="updated">
+                    <span>Last updated</span>
+                    <strong id="lastUpdated">—</strong>
+                </div>
+
+            </header>
+
+
+            <!-- STAT CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <span>Total Visitors</span>
+                        <h2 id="totalVisitors">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </div>
+                    <div>
+                        <span>Today</span>
+                        <h2 id="todayVisitors">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-week"></i>
+                    </div>
+                    <div>
+                        <span>This Week</span>
+                        <h2 id="weekVisitors">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+                    <div>
+                        <span>This Month</span>
+                        <h2 id="monthVisitors">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div>
+                        <span>Unique Visitors</span>
+                        <h2 id="uniqueVisitors">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div>
+                        <span>Page Views</span>
+                        <h2 id="totalPageViews">0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- VISITOR CHART -->
+            <section class="content-card chart-card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="section-label">TRAFFIC</p>
+                        <h2>Visitors This Week</h2>
+                    </div>
+                </div>
+
+                <div class="chart" id="visitorChart"></div>
+
+            </section>
+
+
+            <!-- TWO COLUMN SECTION -->
+            <section class="two-column">
+
+                <!-- DEVICES -->
+                <div class="content-card">
+
+                    <div class="card-header">
+                        <div>
+                            <p class="section-label">DEVICES</p>
+                            <h2>Visitor Devices</h2>
+                        </div>
+                    </div>
+
+                    <div class="device-list">
+
+                        <div class="device-row">
+                            <div class="device-name">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Mobile</span>
+                            </div>
+
+                            <div class="progress">
+                                <div class="progress-bar" id="mobileBar"></div>
+                            </div>
+
+                            <strong id="mobilePercent">0%</strong>
+                        </div>
+
+
+                        <div class="device-row">
+                            <div class="device-name">
+                                <i class="fa-solid fa-desktop"></i>
+                                <span>Desktop</span>
+                            </div>
+
+                            <div class="progress">
+                                <div class="progress-bar" id="desktopBar"></div>
+                            </div>
+
+                            <strong id="desktopPercent">0%</strong>
+                        </div>
+
+
+                        <div class="device-row">
+                            <div class="device-name">
+                                <i class="fa-solid fa-tablet-screen-button"></i>
+                                <span>Tablet</span>
+                            </div>
+
+                            <div class="progress">
+                                <div class="progress-bar" id="tabletBar"></div>
+                            </div>
+
+                            <strong id="tabletPercent">0%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COUNTRIES -->
+                <div class="content-card">
+
+                    <div class="card-header">
+                        <div>
+                            <p class="section-label">LOCATION</p>
+                            <h2>Visitors by Country</h2>
+                        </div>
+                    </div>
+
+                    <div id="countriesList" class="data-list"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SOURCES -->
+            <section class="content-card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="section-label">TRAFFIC SOURCES</p>
+                        <h2>How Visitors Found You</h2>
+                    </div>
+                </div>
+
+                <div id="sourcesList" class="sources-grid"></div>
+
+            </section>
+
+
+            <!-- RECENT VISITS -->
+            <section class="content-card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="section-label">RECENT ACTIVITY</p>
+                        <h2>Recent Visits</h2>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Page</th>
+                                <th>Device</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentVisits"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

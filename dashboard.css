@@ -1,0 +1,687 @@
+/* =========================================================
+   KJCF ADMIN DASHBOARD
+========================================================= */
+
+:root {
+    --primary: #8c7d71;
+    --primary-light: #ead8c5;
+    --primary-dark: #2b211b;
+
+    --secondary: #b39a7b;
+
+    --light: #fcfaf7;
+    --cream: #f7f1e9;
+
+    --dark: #302821;
+    --gray: #756d67;
+
+    --white: #ffffff;
+
+    --border: #e5ddd4;
+    --shadow: 0 8px 25px rgba(48, 40, 33, 0.06);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 245px;
+    background: var(--primary-dark);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 10px 30px;
+}
+
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+    color: var(--primary-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.admin-logo h2 {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.admin-logo span {
+    display: block;
+    margin-top: 3px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    opacity: 0.6;
+}
+
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+.nav-item:hover,
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+
+.nav-item.active {
+    border-left: 3px solid var(--primary-light);
+}
+
+
+.logout-btn {
+    margin-top: auto;
+
+    border: none;
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    padding: 13px 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.logout-btn:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-content {
+    margin-left: 245px;
+    width: calc(100% - 245px);
+
+    padding: 40px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 30px;
+}
+
+
+.eyebrow,
+.section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+
+.topbar h1 {
+    margin-top: 7px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+
+.subtitle {
+    margin-top: 8px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+.updated {
+    text-align: right;
+    color: var(--gray);
+    font-size: 11px;
+}
+
+
+.updated strong {
+    display: block;
+    margin-top: 5px;
+    color: var(--dark);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.stat-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    background: var(--primary-light);
+    color: var(--primary-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+.stat-card span {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+
+.stat-card h2 {
+    margin-top: 5px;
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.content-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 20px;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+
+.card-header h2 {
+    margin-top: 5px;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.chart {
+    height: 240px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    gap: 18px;
+
+    padding: 15px 5px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.chart-column {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    flex: 1;
+}
+
+
+.chart-value {
+    font-size: 11px;
+    color: var(--gray);
+
+    margin-bottom: 6px;
+}
+
+
+.chart-bar {
+    width: min(42px, 70%);
+
+    background: var(--primary);
+
+    border-radius: 7px 7px 0 0;
+
+    min-height: 5px;
+
+    transition: height 0.4s ease;
+}
+
+
+.chart-day {
+    margin-top: 8px;
+
+    font-size: 11px;
+    color: var(--gray);
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   DEVICES
+========================================================= */
+
+.device-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+.device-row {
+    display: grid;
+
+    grid-template-columns: 105px 1fr 40px;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.device-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+}
+
+
+.device-name i {
+    color: var(--primary);
+}
+
+
+.progress {
+    height: 7px;
+
+    background: var(--cream);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    height: 100%;
+
+    width: 0;
+
+    background: var(--primary);
+
+    border-radius: 10px;
+
+    transition: width 0.5s ease;
+}
+
+
+.device-row strong {
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* =========================================================
+   COUNTRIES
+========================================================= */
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.data-row:last-child {
+    border-bottom: none;
+}
+
+
+.data-row span {
+    color: var(--gray);
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.sources-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+
+.source-box {
+    background: var(--cream);
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    text-align: center;
+}
+
+
+.source-box strong {
+    display: block;
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+.source-box span {
+    font-size: 11px;
+
+    color: var(--gray);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+}
+
+
+th {
+    text-align: left;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--gray);
+
+    padding: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+td:first-child {
+    color: var(--gray);
+}
+
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sources-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .admin-logo {
+        justify-content: center;
+    }
+
+    .admin-logo > div:last-child,
+    .nav-item span,
+    .logout-btn span {
+        display: none;
+    }
+
+    .nav-item,
+    .logout-btn {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 75px;
+        width: calc(100% - 75px);
+
+        padding: 25px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .updated {
+        text-align: left;
+    }
+
+    .topbar h1 {
+        font-size: 26px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-card {
+        padding: 18px;
+    }
+}

@@ -2,20 +2,18 @@
 <html lang="kha">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJCF | Devotionals</title>
 
-<title>KJCF | Devotionals</title>
+    <link rel="stylesheet" href="./devotionals.css">
 
-<link rel="stylesheet" href="./devotionals.css">
-
-<!-- Font Awesome -->
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-
-
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 </head>
 
 
@@ -25,109 +23,106 @@
 <!-- =========================================================
      HEADER / NAVIGATION
 ========================================================= -->
+
 <header>
 
+    <div class="container">
 
-<div class="container">
+        <nav class="navbar">
 
-    <nav class="navbar">
+            <a href="./devotionals.html" class="logo">
 
-        <a href="./index.html" class="logo">
+                <img
+                    src="./assets/120674838_377910233582830_5472428078241435132_n-removebg-preview.png"
+                    alt="KJCF Logo"
+                >
 
-            <img
-                src="./assets/120674838_377910233582830_5472428078241435132_n-removebg-preview.png"
-                alt="KJCF Logo"
-            >
+                KJCF BANGALORE
 
-            KJCF BANGALORE
+            </a>
 
-        </a>
 
-        <ul class="nav-links">
+            <ul class="nav-links">
 
-            <li>
-                <a href="./index.html">Home</a>
-            </li>
+                <li>
+                    <a href="./devotionals.html">
+                        Home
+                    </a>
+                </li>
 
-            <li>
-                <a href="./index.html#about">About</a>
-            </li>
-
-            <li>
-                <a href="./index.html#services">Services</a>
-            </li>
-
-            <li class="nav-dropdown">
-
-                <a href="./devotionals.html" class="active devotionals-toggle">
-                    Devotionals
-                </a>
-
-                <div class="devotionals-dropdown">
-
+                <li>
                     <a
                         href="./devotionals.html#about"
                         data-devotion-target="about"
                     >
-                        About Info
+                        About
                     </a>
+                </li>
 
+                <li>
                     <a
                         href="./devotionals.html#collections"
                         data-devotion-target="collections"
                     >
                         Collections
                     </a>
+                </li>
 
-                </div>
+                <li>
+                    <a
+                        href="./devotionals.html#contact"
+                        data-devotion-target="contact"
+                    >
+                        Contact
+                    </a>
+                </li>
 
-            </li>
+            </ul>
 
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
 
-        </ul>
-
-        <!-- Main website language toggle -->
-
-        <div
-            class="language-toggle"
-            id="languageToggle"
-            role="button"
-            tabindex="0"
-            aria-label="Change language"
-            aria-pressed="false"
-        >
-
-            <span class="language-option">EN</span>
-
-            <span class="language-option">KH</span>
+            <!-- Main website language toggle -->
 
             <div
-                class="language-slider"
-                id="languageSlider"
+                class="language-toggle"
+                id="languageToggle"
+                role="button"
+                tabindex="0"
+                aria-label="Change language"
+                aria-pressed="false"
             >
-                EN
+
+                <span class="language-option">
+                    EN
+                </span>
+
+                <span class="language-option">
+                    KH
+                </span>
+
+                <div
+                    class="language-slider"
+                    id="languageSlider"
+                >
+                    EN
+                </div>
+
             </div>
 
-        </div>
 
-        <button
-            class="hamburger"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
+            <button
+                class="hamburger"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
 
-            <i class="fas fa-bars"></i>
+                <i class="fas fa-bars"></i>
 
-        </button>
+            </button>
 
-    </nav>
+        </nav>
 
-</div>
-
+    </div>
 
 </header>
 
@@ -143,20 +138,26 @@
 
         <div class="devotion-hero-content">
 
-            <div class="devotion-hero-icon">
+            <!-- This icon goes to Devotion of the Day -->
+
+            <a
+                href="#devotion-of-the-day"
+                class="devotion-hero-icon"
+                aria-label="Go to today's devotion"
+            >
 
                 <i class="fas fa-book-open"></i>
 
-            </div>
+            </a>
 
 
             <h1>
-                Ki Devotionals
+                Devotionals
             </h1>
 
 
             <p>
-                Ki Devotionals kiba shim na ka Ktien U Blei
+                Ki Devotionals kiba shim na ka Baibl.
             </p>
 
         </div>
@@ -166,168 +167,363 @@
 </section>
 
 
+
 <!-- =========================================================
-     DEVOTIONAL LIBRARY
+     DEVOTION OF THE DAY
 ========================================================= -->
 
-<section class="devotion-library">
+<section
+    id="devotion-of-the-day"
+    class="devotion-section"
+>
 
     <div class="container">
 
-        <div class="library-heading reveal">
 
-            <span
-                class="library-label"
-                id="libraryLabel"
-            ></span>
+        <div class="devotion-header">
 
-
-            <div class="library-info-box">
-
-                <div class="library-description">
-
-                    <p>
-                        Ka KJCF Bangalore ka pynmih ia kine ki Jingpuson
-                        na ka Ktien U Blei kiba man la ka sngi.
-                    </p>
+            <h2 class="section-title">
+                Devotion of The Day
+            </h2>
 
 
-                    <p>
-                        Ka jingthmu jong kine ki Jingpuson ka long ban
-                        iarap ia ngi ban pyrkhat bad ban pyniasoh ia ka
-                        Ktien U Blei bad ka jingim jong ngi man la ka sngi.
-                    </p>
+            <div class="devotion-divider">
 
+                <span class="divider-line"></span>
 
-                    <p>
-                        Ka KJCF Bangalore ka kyrpad ia kiba pule ba lada
-                        ki don kano kano ka jingbymshai, kano kano ka
-                        jingkynthoh kaba ki kwah, lane kino kino ki jingkylli
-                        halor jong kine ki Jingpuson, kin sngewbha ban
-                        pyntip sha ngi.
-                    </p>
+                <span class="divider-cross">
+                    ✝
+                </span>
 
-                </div>
-
-
-                <div class="contact-note">
-
-                    <i class="fas fa-envelope"></i>
-
-
-                    <span>
-                        Ki jingkylli ne jingkynthoh lah ban phah sha:
-                    </span>
-
-
-                    <a href="mailto:kjcfbangalore@gmail.com">
-                        kjcfbangalore@gmail.com
-                    </a>
-
-                </div>
+                <span class="divider-line"></span>
 
             </div>
 
         </div>
 
 
-        <!-- =================================================
-             TABS
-        ================================================= -->
 
-        <div class="devotion-tabs">
+        <div class="devotion-card">
 
-            <button
-                type="button"
-                class="tab-button active"
-                data-tab="about"
-            >
-
-                <i class="fas fa-circle-info"></i>
-
-                About Info
-
-            </button>
+            <div class="devotion-content">
 
 
-            <button
-                type="button"
-                class="tab-button"
-                data-tab="collections"
-            >
+                <!-- Date + devotion language toggle -->
 
-                <i class="fas fa-layer-group"></i>
+                <div class="devotion-date-row">
 
-                Collections
-
-            </button>
-
-        </div>
-
-
-        <!-- =================================================
-             KHASI CONTENT
-        ================================================= -->
-
-        <div class="khasi-content">
-
-
-            <!-- ABOUT TAB -->
-
-            <div
-                class="tab-content active"
-                id="about"
-            >
-
-                <div class="about-devotions">
-
-                    <h3>
-                        Sngewbha Kynmaw!
+                    <h3
+                        data-devotion-en="September 5th, 2026"
+                        data-devotion-khasi="September 5th, 2026"
+                    >
+                        September 5th, 2026
                     </h3>
 
 
-                    <p>
-                        Ka KJCF Bangalore ka long trai ia kine ki jingthoh baroh,
-                        naba ym shym la thoh da kaba shu shim ia ka jong kiwei.
-                        Kumta baroh kine ki Jingpuson ki long 'Copyright Reserved'.
+                    <div
+                        class="devotion-language-toggle"
+                        id="devotionLanguageToggle"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Read devotion in Khasi"
+                        aria-pressed="false"
+                    >
+
+                        <span id="devotionLanguageText">
+                            Read in Khasi
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <p
+                    data-devotion-en="Singers and musicians who are famous around the world often perform at concerts in Shillong. Many people desire not only to see them, but especially to hear them. Yet not everyone gets the opportunity to see and hear them. Some people simply come to observe and look at them — how they dress and how they carry themselves."
+
+                    data-devotion-khasi="Ki nongrwai bad ki nongtem kiba pawnam ha ka pyrthei ki ju wan ban perform ha ki Concerts ha Shillong. Baroh baroh ki ia kwah ym tang ban iohi hynrei khamtam eh ban iohsngew ia ki. Hynrei ym baroh kiba ioh ia ka lad ban iohi bad iohsngew ia ki. Pynban don kiba shu wan tang ban bishar bad ban peit kai ia ki, ki riam kumno bad ki iaid kumno."
+                >
+
+                    Ki nongrwai bad ki nongtem kiba pawnam ha ka pyrthei ki ju wan ban perform ha ki Concerts ha Shillong. Baroh baroh ki ia kwah ym tang ban iohi hynrei khamtam eh ban iohsngew ia ki. Hynrei ym baroh kiba ioh ia ka lad ban iohi bad iohsngew ia ki. Pynban don kiba shu wan tang ban bishar bad ban peit kai ia ki, ki riam kumno bad ki iaid kumno.
+
+                </p>
+
+
+
+                <p
+                    data-devotion-en="Everyone should be quick to listen, slow to speak and slow to become angry."
+
+                    data-devotion-khasi="U Trai Jisu, ha ka dkhot kaba 17 U ong, Naba shisha Nga ong ha phi, ba bun ki nongiathuhlypa bad ki riewhok ki la kwah ban iohi ia kiei kiei ruh ba phi iohi, te kim shym la iohi; bad ban iohsngew ia kiei kiei ruh ba phi iohsngew, te kim shym la iohi bad la iohsngew."
+                >
+
+                    U Trai Jisu, ha ka dkhot kaba 17 U ong, Naba shisha Nga ong ha phi, ba bun ki nongiathuhlypa bad ki riewhok ki la kwah ban iohi ia kiei kiei ruh ba phi iohi, te kim shym la iohi; bad ban iohsngew ia kiei kiei ruh ba phi iohsngew, te kim shym la iohi bad la iohsngew.
+
+                </p>
+
+
+
+                <div class="devotion-scripture">
+
+                    <span class="scripture-label">
+                        SCRIPTURE
+                    </span>
+
+
+                    <p
+                        class="scripture-quote"
+                        data-devotion-en='"Those who have ears to hear, let them hear."'
+                        data-devotion-khasi='"Uba don ki shkor ban sngew, to un sngew."'
+                    >
+
+                        "Uba don ki shkor ban sngew, to un sngew."
+
                     </p>
 
 
-                    <p>
-                        Hynrei ka KJCF Bangalore kam don jingkhang ba phin
-                        pyndonkam ia ki bynta na kine ki jingpuson na ka bynta
-                        ki jingdonkam (non commercial) ki jong phi lane ban
-                        pynkylla (translate) sha ka English ne sha kiwei pat
-                        ki ktien (languages).
-                    </p>
+                    <span
+                        class="scripture-verse"
+                        data-devotion-en="Matthew 13:9"
+                        data-devotion-khasi="Mathaios 13:9"
+                    >
+
+                        Mathaios 13:9
+
+                    </span>
+
+                </div>
 
 
-                    <p>
-                        Wat la katta ruh ka KJCF Bangalore ka buh ia ka
-                        'Disclaimer' ba kine ki jingthoh baroh kin long tang
-                        na ka bynta ka 'Private circulation' hapoh ka jylli
-                        treikam jong ka bad kam shim jingkitkhlieh shabar na
-                        ka jylli treikam jong ka.
-                    </p>
+
+                <p
+                    data-devotion-en="The teachings of Jesus were precious and unlike anything that had come before. Those who lived in earlier times longed to see the Messiah and hear His teaching, yet they did not have that opportunity."
+
+                    data-devotion-khasi="Ki jinghikai jong U Trai Jisu ki long kiba ym pat don ha ka Testament kaba Rim, ki nonghikai kiba la hikai kum ma U. Kita kiba ha kaba mynbarim ki thrang eh ban iohi ia U Trai Jisu, Uba long U Messiah, ban iohsngew ia ki jinghikai jong U hynrei kim shym la iohi bad la iohsngew."
+                >
+
+                    Ki jinghikai jong U Trai Jisu ki long kiba ym pat don ha ka Testament kaba Rim, ki nonghikai kiba la hikai kum ma U. Kita kiba ha kaba mynbarim ki thrang eh ban iohi ia U Trai Jisu, Uba long U Messiah, ban iohsngew ia ki jinghikai jong U hynrei kim shym la iohi bad la iohsngew.
+
+                </p>
 
 
-                    <p>
-                        Kumta ka kyrpad ia kiba pule ban ym 'circulate' ia kine
-                        ki jingthoh ha ka 'Public domain' bad lada kiba pule ki
-                        sngew ba ki dei ban 'circulate' ruh, kin hap ban pynmih
-                        ym shuh ha ka kyrteng jong ka KJCF Bangalore bad ki dei
-                        namarkata ban shim hi ia ka jingkitkhlieh. Kumta ia kane
-                        ka Website link, sngewbha ban ym 'share' 'publicly'
-                        shabar na ka jylli kaba la kdew haneng, kata lait noh
-                        sha ki bahaiing, ki paralok bad kiba kum kita.
+
+                <p
+                    data-devotion-en="The teachings of Jesus were extremely precious. However, some of the Pharisees did not come with a desire to hear His valuable teaching. Instead, they came only to find fault with Him and look for reasons to oppose Him."
+
+                    data-devotion-khasi="Ki jinghikai jong U Trai Jisu ki long kiba kordor haduh katta katta. Hynrei kiba na ki Pharisi kim shym la wan da ka jingthrang ban iohsngew ia ki jinghikai kiba kordor jong U, hynrei ki wan tang ban ioh ban kem daw bad ban wad dong pyrshah ia U."
+                >
+
+                    Ki jinghikai jong U Trai Jisu ki long kiba kordor haduh katta katta. Hynrei kiba na ki Pharisi kim shym la wan da ka jingthrang ban iohsngew ia ki jinghikai kiba kordor jong U, hynrei ki wan tang ban ioh ban kem daw bad ban wad dong pyrshah ia U.
+
+                </p>
+
+
+
+                <div class="devotion-reflection">
+
+                    <h4
+                        data-devotion-en="REFLECTION"
+                        data-devotion-khasi="KA JINGMUT"
+                    >
+
+                        KA JINGMUT
+
+                    </h4>
+
+
+                    <p
+                        data-devotion-en="We need to desire to know and understand the Word of God. A genuine desire for God's Word helps us become attentive and receptive to the truths within it, and responsive to God's will in our lives."
+
+                        data-devotion-khasi="Ngi donkam ban thrang ban tip bad ban shemphang ia ka Ktien jong U Blei. Ka jingthrang ia ka Ktien U Blei ka iarap ba ngin long attentive bad ngin long receptive ia ki jingshisha kiba don ha ka bad ngin long responsive ruh ban leh ia ka mon jong U Blei."
+                    >
+
+                        Ngi donkam ban thrang ban tip bad ban shemphang ia ka Ktien jong U Blei. Ka jingthrang ia ka Ktien U Blei ka iarap ba ngin long attentive bad ngin long receptive ia ki jingshisha kiba don ha ka bad ngin long responsive ruh ban leh ia ka mon jong U Blei.
+
                     </p>
 
                 </div>
 
             </div>
 
+        </div>
 
-            <!-- COLLECTIONS TAB -->
+    </div>
+
+</section>
+
+<!-- =========================================================
+     DEVOTIONAL LIBRARY
+     ABOUT INFO + COLLECTIONS + CONTACT
+========================================================= -->
+
+<section
+    id="about"
+    class="devotion-library"
+>
+
+    <div class="container">
+
+        <div class="library-panel">
+
+            <!-- =================================================
+                 TABS
+            ================================================= -->
+
+            <div class="devotion-tabs">
+
+                <button
+                    type="button"
+                    class="tab-button active"
+                    data-tab="about-info"
+                >
+                    <i class="fas fa-circle-info"></i>
+                    About Info
+                </button>
+
+
+                <button
+                    type="button"
+                    class="tab-button"
+                    data-tab="collections"
+                >
+                    <i class="fas fa-layer-group"></i>
+                    Collections
+                </button>
+
+
+                <button
+                    type="button"
+                    class="tab-button"
+                    data-tab="contact"
+                >
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ABOUT INFO TAB
+            ================================================= -->
+
+            <div
+                class="tab-content active"
+                id="about-info"
+            >
+
+                <div class="library-info-box">
+
+                    <div class="library-description">
+
+                        <p>
+                            Ka KJCF Bangalore ka pynmih ia kine ki Jingpuson
+                            na ka Ktien U Blei kiba man la ka sngi.
+                        </p>
+
+
+                        <p>
+                            Ka jingthmu jong kine ki Jingpuson ka long ban
+                            iarap ia ngi ban pyrkhat bad ban pyniasoh ia ka
+                            Ktien U Blei bad ka jingim jong ngi man la ka sngi.
+                        </p>
+
+
+                        <p>
+                            Ka KJCF Bangalore ka kyrpad ia kiba pule ba lada
+                            ki don kano kano ka jingbymshai, kano kano ka
+                            jingkynthoh kaba ki kwah, lane kino kino ki jingkylli
+                            halor jong kine ki Jingpuson, kin sngewbha ban
+                            pyntip sha ngi.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- EMAIL / CONTACT -->
+
+                    <div class="contact-note">
+
+                        <i class="fas fa-envelope"></i>
+
+                        <span>
+                            Ki jingkylli ne jingkynthoh lah ban phah sha:
+                        </span>
+
+                        <a href="mailto:kjcfbangalore@gmail.com">
+                            kjcfbangalore@gmail.com
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         SNGEWBHA KYNMAW / DISCLAIMER
+                    ================================================= -->
+
+                    <div class="disclaimer-note">
+
+                        <div class="disclaimer-note-header">
+
+                            <i class="fas fa-circle-info"></i>
+
+                            <span>
+                                Sngewbha Kynmaw
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Ka KJCF Bangalore ka long trai ia kine ki jingthoh baroh,
+                            naba ym shym la thoh da kaba shu shim ia ka jong kiwei.
+                            Kumta baroh kine ki Jingpuson ki long 'Copyright Reserved'.
+                        </p>
+
+
+                        <p>
+                            Hynrei ka KJCF Bangalore kam don jingkhang ba phin
+                            pyndonkam ia ki bynta na kine ki jingpuson na ka bynta
+                            ki jingdonkam (non commercial) ki jong phi lane ban
+                            pynkylla (translate) sha ka English ne sha kiwei pat
+                            ki ktien (languages).
+                        </p>
+
+
+                        <p>
+                            Wat la katta ruh ka KJCF Bangalore ka buh ia ka
+                            'Disclaimer' ba kine ki jingthoh baroh kin long tang
+                            na ka bynta ka 'Private circulation' hapoh ka jylli
+                            treikam jong ka bad kam shim jingkitkhlieh shabar na
+                            ka jylli treikam jong ka.
+                        </p>
+
+
+                        <p>
+                            Kumta ka kyrpad ia kiba pule ban ym 'circulate' ia kine
+                            ki jingthoh ha ka 'Public domain' bad lada kiba pule ki
+                            sngew ba ki dei ban 'circulate' ruh, kin hap ban pynmih
+                            ym shuh ha ka kyrteng jong ka KJCF Bangalore bad ki dei
+                            namarkata ban shim hi ia ka jingkitkhlieh. Kumta ia kane
+                            ka Website link, sngewbha ban ym 'share' 'publicly'
+                            shabar na ka jylli kaba la kdew haneng, kata lait noh
+                            sha ki bahaiing, ki paralok bad kiba kum kita.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COLLECTIONS TAB
+            ================================================= -->
 
             <div
                 class="tab-content"
@@ -339,11 +535,8 @@
                     <div class="month-header">
 
                         <div class="month-icon">
-
                             <i class="fas fa-calendar-days"></i>
-
                         </div>
-
 
                         <div>
 
@@ -351,18 +544,12 @@
                                 Collections 2026
                             </h3>
 
-
-                            <p>
-                                Ki Jingpule Ba Man Ka Sngi
-                            </p>
-
                         </div>
 
                     </div>
 
 
                     <div class="devotion-list">
-
 
                         <!-- AUGUST 30 -->
 
@@ -375,13 +562,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    30
-                                </strong>
+                                <strong>30</strong>
 
-                                <small>
-                                    AUG
-                                </small>
+                                <small>AUG</small>
 
                             </div>
 
@@ -408,6 +591,7 @@
                         </a>
 
 
+
                         <!-- AUGUST 31 -->
 
                         <a
@@ -419,13 +603,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    31
-                                </strong>
+                                <strong>31</strong>
 
-                                <small>
-                                    AUG
-                                </small>
+                                <small>AUG</small>
 
                             </div>
 
@@ -452,6 +632,7 @@
                         </a>
 
 
+
                         <!-- SEPTEMBER 1 -->
 
                         <a
@@ -463,13 +644,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    01
-                                </strong>
+                                <strong>01</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -496,6 +673,7 @@
                         </a>
 
 
+
                         <!-- SEPTEMBER 2 -->
 
                         <a
@@ -507,13 +685,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    2
-                                </strong>
+                                <strong>2</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -540,6 +714,7 @@
                         </a>
 
 
+
                         <!-- SEPTEMBER 3 -->
 
                         <a
@@ -551,13 +726,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    3
-                                </strong>
+                                <strong>3</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -584,6 +755,7 @@
                         </a>
 
 
+
                         <!-- SEPTEMBER 4 -->
 
                         <a
@@ -595,13 +767,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    4
-                                </strong>
+                                <strong>4</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -628,9 +796,10 @@
                         </a>
 
 
+
                         <!-- SEPTEMBER 5 -->
 
-                       <a
+                        <a
                             href="./col_6.html"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -639,13 +808,9 @@
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    5
-                                </strong>
+                                <strong>5</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -653,7 +818,7 @@
                             <div class="devotion-info">
 
                                 <h4>
-                                   Ka Khyndew Kaba Jylliew Bad Kaba Bha
+                                    Ka Khyndew Kaba Jylliew Bad Kaba Bha
                                 </h4>
 
                                 <p>
@@ -672,19 +837,16 @@
                         </a>
 
 
+
                         <!-- SEPTEMBER 6 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    6
-                                </strong>
+                                <strong>6</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -709,19 +871,16 @@
                         </div>
 
 
+
                         <!-- SEPTEMBER 7 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    7
-                                </strong>
+                                <strong>7</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -746,19 +905,16 @@
                         </div>
 
 
+
                         <!-- SEPTEMBER 8 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    8
-                                </strong>
+                                <strong>8</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -783,19 +939,16 @@
                         </div>
 
 
+
                         <!-- SEPTEMBER 9 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    9
-                                </strong>
+                                <strong>9</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -820,19 +973,16 @@
                         </div>
 
 
+
                         <!-- SEPTEMBER 10 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    10
-                                </strong>
+                                <strong>10</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -857,19 +1007,16 @@
                         </div>
 
 
+
                         <!-- SEPTEMBER 11 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    11
-                                </strong>
+                                <strong>11</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -894,19 +1041,16 @@
                         </div>
 
 
+
                         <!-- SEPTEMBER 12 -->
 
                         <div class="devotion-item coming-soon">
 
                             <div class="devotion-date">
 
-                                <strong>
-                                    12
-                                </strong>
+                                <strong>12</strong>
 
-                                <small>
-                                    SEP
-                                </small>
+                                <small>SEP</small>
 
                             </div>
 
@@ -936,33 +1080,201 @@
 
             </div>
 
+
+
+            <!-- =================================================
+                 CONTACT TAB
+            ================================================= -->
+
+            <div
+                class="tab-content"
+                id="contact"
+            >
+
+                <div class="library-info-box">
+
+                    <div class="contact-content">
+
+                        <!-- CONTACT INFORMATION -->
+
+                        <div class="contact-info">
+
+                            <h3>
+                                Contact Information
+                            </h3>
+
+
+                            <div class="contact-item">
+
+                                <i class="fas fa-map-marker-alt"></i>
+
+                                <div>
+
+                                    <h4>
+                                        Address
+                                    </h4>
+
+                                    <p>
+                                        Slip Road, Hutchins Rd, St Thomas Town,
+                                        Cooke Town, Bengaluru, Karnataka - 560084
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <i class="fas fa-phone"></i>
+
+                                <div>
+
+                                    <h4>
+                                        Phone
+                                    </h4>
+
+                                    <p>
+                                        +91
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <i class="fas fa-envelope"></i>
+
+                                <div>
+
+                                    <h4>
+                                        Email
+                                    </h4>
+
+                                    <p>
+                                        <a href="mailto:kjcfbangalore@gmail.com">
+                                            kjcfbangalore@gmail.com
+                                        </a>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CONTACT FORM -->
+
+                        <div class="contact-form">
+
+                            <h3>
+                                Send Us a Message
+                            </h3>
+
+
+                            <form id="contactForm">
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Your Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="form-control"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Your Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="form-control"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="message">
+                                        Your Message
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        class="form-control"
+                                        rows="5"
+                                        required
+                                    ></textarea>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                >
+                                    Send Message
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
-
-    <!-- =====================================================
-         ENGLISH MESSAGE
-    ===================================================== -->
-
-    <div class="english-message">
-
-        <i class="fas fa-language"></i>
-
-
-        <h3>
-            English Version Coming Soon
-        </h3>
-
-
-        <p>
-            The English version of our devotionals is currently
-            being prepared. Please check back soon.
-        </p>
-
-    </div>
-
 </section>
+
+
+
+<!-- =========================================================
+     ENGLISH MESSAGE
+========================================================= -->
+
+<div class="english-message">
+
+    <i class="fas fa-language"></i>
+
+
+    <h3>
+        English Version Coming Soon
+    </h3>
+
+
+    <p>
+        The English version of our devotionals is currently
+        being prepared. Please check back soon.
+    </p>
+
+</div>
+
 
 
 <!-- =========================================================
@@ -976,10 +1288,12 @@
         <div class="footer-content">
 
 
+            <!-- BRAND + SOCIAL MEDIA -->
+
             <div class="footer-column">
 
                 <h3>
-                    KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH
+                    KJCF BANGALORE
                 </h3>
 
 
@@ -1020,20 +1334,13 @@
 
                     </a>
 
-
-                    <a
-                        href="#"
-                        aria-label="WhatsApp"
-                    >
-
-                        <i class="fab fa-whatsapp"></i>
-
-                    </a>
-
                 </div>
 
             </div>
 
+
+
+            <!-- DEVOTIONAL QUICK LINKS -->
 
             <div class="footer-column">
 
@@ -1045,84 +1352,36 @@
                 <ul class="footer-links">
 
                     <li>
-                        <a href="./index.html#home">
+                        <a href="./devotionals.html">
                             Home
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="./index.html#about">
-                            About Us
+                        <a href="./devotionals.html#devotion-of-the-day">
+                            Devotion of the Day
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="./index.html#services">
-                            Services
+                        <a href="./devotionals.html#about">
+                            About
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="./index.html#events">
-                            Events
+                        <a href="./devotionals.html#collections">
+                            Collections
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="./index.html#contact">
+                        <a href="./devotionals.html#contact">
                             Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    Ministries
-                </h3>
-
-
-                <ul class="footer-links">
-
-                    <li>
-                        <a href="#">
-                            Children's Ministry
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            Youth Ministry
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            Women's Fellowship
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            Men's Ministry
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            Outreach Programs
                         </a>
                     </li>
 
@@ -1133,10 +1392,13 @@
         </div>
 
 
+
+        <!-- COPYRIGHT -->
+
         <div class="copyright">
 
             <p>
-                &copy; 2026 KHASI JAINTIA CHRISTIAN FELLOWSHIP CHURCH.
+                © 2026 KHASI JAINTIA CHRISTIAN FELLOWSHIP BANGALORE.
                 All Rights Reserved.
             </p>
 
@@ -1146,8 +1408,10 @@
 
 </footer>
 
+
+
 <script src="./devotionals.js"></script>
 
 </body>
 
-</html> 
+</html>
