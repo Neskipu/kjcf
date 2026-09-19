@@ -1,5 +1,4 @@
 
-
 /* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
@@ -69,6 +68,7 @@ function getHeaderHeight() {
 
 }
 
+
 function scrollToLibrary() {
 
     const library = document.querySelector('.devotion-library');
@@ -90,6 +90,7 @@ function scrollToLibrary() {
     });
 
 }
+
 
 /* =========================================================
    ACTIVATE TAB
@@ -249,7 +250,7 @@ document
 
 
             /* -------------------------------------------------
-               Scroll to the devotional library
+               Scroll to devotional library
             ------------------------------------------------- */
 
             setTimeout(() => {
@@ -377,7 +378,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   LANGUAGE TOGGLE
+   MAIN WEBSITE LANGUAGE TOGGLE
 ========================================================= */
 
 const languageToggle =
@@ -420,6 +421,8 @@ if (languageToggle) {
 
 /* =========================================================
    DEVOTIONAL LANGUAGE TOGGLE
+   KHASI = DEFAULT
+   ENGLISH = COMING SOON BARRIER
 ========================================================= */
 
 const devotionLanguageToggle =
@@ -433,74 +436,284 @@ const devotionLanguageText =
     );
 
 
-let devotionLanguage =
-    localStorage.getItem(
-        'devotionLanguage'
-    ) || 'khasi';
+/*
+   IMPORTANT:
+
+   The devotional always starts in Khasi.
+
+   We intentionally do NOT use localStorage here.
+   That means even if someone selected English before,
+   the page will return to Khasi when they reload it.
+*/
+
+let devotionLanguage = 'khasi';
 
 
-function updateDevotionLanguage() {
+/* =========================================================
+   CREATE ENGLISH COMING SOON BARRIER
+========================================================= */
 
-    const elements =
-        document.querySelectorAll(
-            '[data-devotion-en]'
+function createEnglishComingSoonBarrier() {
+
+    let barrier =
+        document.getElementById(
+            'devotionEnglishComingSoon'
         );
 
 
-    elements.forEach(element => {
-
-        const english =
-            element.dataset.devotionEn;
-
-        const khasi =
-            element.dataset.devotionKhasi;
+    if (barrier) {
+        return barrier;
+    }
 
 
-        if (
-            devotionLanguage === 'english'
-        ) {
+    barrier =
+        document.createElement('div');
 
-            element.textContent =
-                english;
+    barrier.id =
+        'devotionEnglishComingSoon';
 
-        } else {
-
-            element.textContent =
-                khasi;
-
-        }
-
-    });
+    barrier.className =
+        'devotion-english-coming-soon';
 
 
-    if (devotionLanguageToggle) {
+    barrier.innerHTML = `
+        <div class="devotion-coming-soon-icon">
+            <i class="fas fa-language"></i>
+        </div>
 
-        devotionLanguageToggle.classList.toggle(
-            'english-active',
-            devotionLanguage === 'english'
+        <h3>
+            English Version Coming Soon
+        </h3>
+
+        <p>
+            The English version of this devotional
+            is currently being prepared.
+            Please check back soon.
+        </p>
+    `;
+
+
+    /*
+       Put the barrier inside the devotional content,
+       directly after the date row.
+    */
+
+    const devotionContent =
+        document.querySelector(
+            '.devotion-card .devotion-content'
         );
 
-        devotionLanguageToggle.setAttribute(
-            'aria-pressed',
-            devotionLanguage === 'english'
-                ? 'true'
-                : 'false'
+    const dateRow =
+        devotionContent?.querySelector(
+            '.devotion-date-row'
+        );
+
+
+    if (devotionContent && dateRow) {
+
+        dateRow.insertAdjacentElement(
+            'afterend',
+            barrier
         );
 
     }
 
 
+    return barrier;
+
+}
+
+
+/* =========================================================
+   GET KHASI DEVOTIONAL CONTENT
+========================================================= */
+
+function getDevotionContentElements() {
+
+    const devotionContent =
+        document.querySelector(
+            '.devotion-card .devotion-content'
+        );
+
+
+    if (!devotionContent) {
+        return [];
+    }
+
+
+    /*
+       These are the actual devotional pieces
+       that should disappear when EN is selected.
+
+       We deliberately leave:
+       - the date row
+       - the language toggle
+       - Explore Collections
+
+       visible.
+    */
+
+    return Array.from(
+        devotionContent.children
+    ).filter(element => {
+
+        return (
+            !element.classList.contains(
+                'devotion-date-row'
+            ) &&
+            !element.classList.contains(
+                'devotion-english-coming-soon'
+            ) &&
+            !element.classList.contains(
+                'explore-collections'
+            )
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   UPDATE DEVOTIONAL LANGUAGE
+========================================================= */
+
+function updateDevotionLanguage() {
+
+    const barrier =
+        createEnglishComingSoonBarrier();
+
+    const contentElements =
+        getDevotionContentElements();
+
+
+    /* =====================================================
+       KHASI MODE
+    ===================================================== */
+
+    if (devotionLanguage === 'khasi') {
+
+        /*
+           Show the actual Khasi devotional.
+        */
+
+        contentElements.forEach(element => {
+
+            element.style.display = '';
+
+        });
+
+
+        /*
+           Hide the English Coming Soon barrier.
+        */
+
+        if (barrier) {
+
+            barrier.style.display =
+                'none';
+
+        }
+
+
+        /*
+           Toggle appearance
+        */
+
+        if (devotionLanguageToggle) {
+
+            devotionLanguageToggle.classList.remove(
+                'english-active'
+            );
+
+            devotionLanguageToggle.setAttribute(
+                'aria-pressed',
+                'false'
+            );
+
+        }
+
+
+        /*
+           Toggle text
+        */
+
+        if (devotionLanguageText) {
+
+            devotionLanguageText.textContent =
+                'English Coming Soon';
+
+        }
+
+        return;
+    }
+
+
+    /* =====================================================
+       ENGLISH MODE
+    ===================================================== */
+
+    /*
+       Hide all of the actual Khasi devotional content.
+    */
+
+    contentElements.forEach(element => {
+
+        element.style.display = 'none';
+
+    });
+
+
+    /*
+       Show the single English Coming Soon barrier.
+    */
+
+    if (barrier) {
+
+        barrier.style.display =
+            'block';
+
+    }
+
+
+    /*
+       Toggle appearance
+    */
+
+    if (devotionLanguageToggle) {
+
+        devotionLanguageToggle.classList.add(
+            'english-active'
+        );
+
+        devotionLanguageToggle.setAttribute(
+            'aria-pressed',
+            'true'
+        );
+
+    }
+
+
+    /*
+       Toggle text
+
+       Once EN is selected, the user can click it again
+       to return to Khasi.
+    */
+
     if (devotionLanguageText) {
 
         devotionLanguageText.textContent =
-            devotionLanguage === 'english'
-                ? 'Read in Khasi'
-                : 'Read in English';
+            'Read in Khasi';
 
     }
 
 }
 
+
+/* =========================================================
+   DEVOTIONAL LANGUAGE TOGGLE CLICK
+========================================================= */
 
 if (devotionLanguageToggle) {
 
@@ -514,13 +727,37 @@ if (devotionLanguageToggle) {
                     : 'khasi';
 
 
-            localStorage.setItem(
-                'devotionLanguage',
-                devotionLanguage
-            );
-
-
             updateDevotionLanguage();
+
+        }
+    );
+
+
+    /*
+       Also allow keyboard activation
+       with Enter or Space.
+    */
+
+    devotionLanguageToggle.addEventListener(
+        'keydown',
+        event => {
+
+            if (
+                event.key === 'Enter' ||
+                event.key === ' '
+            ) {
+
+                event.preventDefault();
+
+                devotionLanguage =
+                    devotionLanguage === 'khasi'
+                        ? 'english'
+                        : 'khasi';
+
+
+                updateDevotionLanguage();
+
+            }
 
         }
     );
@@ -694,16 +931,19 @@ document.addEventListener(
     'DOMContentLoaded',
     () => {
 
-        /* ---------------------------------------------
-           Set devotional language
-        --------------------------------------------- */
+        /*
+           Always start devotional language in KHASI.
+        */
+
+        devotionLanguage =
+            'khasi';
 
         updateDevotionLanguage();
 
 
-        /* ---------------------------------------------
-           Check URL hash
-        --------------------------------------------- */
+        /*
+           Check URL hash.
+        */
 
         if (window.location.hash) {
 
@@ -711,9 +951,9 @@ document.addEventListener(
 
         } else {
 
-            /* -----------------------------------------
-               Default to About Info
-            ----------------------------------------- */
+            /*
+               Default to About Info.
+            */
 
             activateTab(
                 'about-info',
@@ -726,46 +966,111 @@ document.addEventListener(
     }
 );
 
-// =========================================================
-// CONTACT FORM
-// Sends the form data to the Express backend
-// =========================================================
 
-const contactForm = document.getElementById("contactForm");
+/* =========================================================
+   CONTACT FORM
+   Sends the form data to the Express backend
+========================================================= */
+
+const contactForm =
+    document.getElementById(
+        'contactForm'
+    );
+
 
 if (contactForm) {
-    contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+    contactForm.addEventListener(
+        'submit',
+        async event => {
 
-        try {
-            const response = await fetch("http://localhost:3000/api/contacts", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message
-                })
-            });
+            event.preventDefault();
 
-            const data = await response.json();
 
-            if (response.ok) {
-                alert("Message sent successfully!");
-                contactForm.reset();
-            } else {
-                alert(data.message || "Failed to send message.");
+            const name =
+                document.getElementById(
+                    'name'
+                ).value;
+
+
+            const phone =
+                document.getElementById(
+                    'phone'
+                )?.value || '';
+
+
+            const email =
+                document.getElementById(
+                    'email'
+                ).value;
+
+
+            const message =
+                document.getElementById(
+                    'message'
+                ).value;
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        'http://localhost:3000/api/contacts',
+                        {
+                            method: 'POST',
+
+                            headers: {
+                                'Content-Type':
+                                    'application/json'
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    name: name,
+                                    phone: phone,
+                                    email: email,
+                                    message: message
+                                })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (response.ok) {
+
+                    alert(
+                        'Message sent successfully!'
+                    );
+
+                    contactForm.reset();
+
+                } else {
+
+                    alert(
+                        data.message ||
+                        'Failed to send message.'
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    'Error submitting contact form:',
+                    error
+                );
+
+                alert(
+                    'Could not connect to the server.'
+                );
+
             }
 
-        } catch (error) {
-            console.error("Error submitting contact form:", error);
-            alert("Could not connect to the server.");
         }
-    });
+    );
+
 }
