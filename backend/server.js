@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 app.use(cors({
-    origin: "https://neskipu.github.io"
+    origin: "https://kjcf-bangalore.onrender.com/devotionals"
 }));
 
 app.use(express.json());
